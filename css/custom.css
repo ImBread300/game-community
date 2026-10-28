@@ -1,0 +1,75 @@
+:root {
+  --accent: #f6ce79;
+  --page-bg: #171326;
+  --panel-bg: #241d38;
+  --header-bg: #100e1b;
+}
+
+body {
+  --bs-body-color: #eee6f6;
+  --bs-body-bg: var(--page-bg);
+  --bs-secondary-color: #bcaed1;
+  --bs-border-color: #514164;
+  --bs-primary-rgb: 246, 206, 121;
+  --bs-link-color: #f6ce79;
+  --bs-link-color-rgb: 246, 206, 121;
+  --bs-link-hover-color: #ffe5af;
+  --bs-link-hover-color-rgb: 255, 229, 175;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at 10% 5%, #3a2b55 0, transparent 55%), radial-gradient(ellipse at 95% 0, #f6ce7910 0, transparent 40%), var(--page-bg);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+section[id], article[id] { scroll-margin-top: 1.5rem; }
+.site-header, .site-footer { background: var(--header-bg); }
+.site-header .navbar { min-height: 90px; --bs-navbar-color: #d5c6e7; --bs-navbar-hover-color: #fff0cf; --bs-navbar-active-color: var(--accent); }
+.brand-mark { display: grid; place-items: center; flex-shrink: 0; width: 45px; height: 45px; border-radius: 5px; background: #3a2b55; color: var(--accent); font-size: 27px; font-weight: 800; letter-spacing: -3px; padding-right: 3px; box-shadow: inset 0 0 0 1px #806395; }
+.brand-name { color: #eee6f6; font-size: 18px; font-weight: 700; letter-spacing: 1px; }
+.site-header .nav-link { font-size: 14px; }
+.site-header .nav-link.active { text-decoration: underline; text-underline-offset: 6px; }
+.project-label { color: #bcaed1; font-size: 11px; margin-top: 12px; }
+.text-primary { color: var(--accent) !important; }
+.btn-primary {
+  --bs-btn-color: #24182f;
+  --bs-btn-bg: #f6ce79;
+  --bs-btn-border-color: #f6ce79;
+  --bs-btn-hover-color: #24182f;
+  --bs-btn-hover-bg: #ffe5af;
+  --bs-btn-hover-border-color: #ffe5af;
+  --bs-btn-active-color: #24182f;
+  --bs-btn-active-bg: #dfb45f;
+  --bs-btn-active-border-color: #dfb45f;
+  --bs-btn-focus-shadow-rgb: 246, 206, 121;
+  --bs-btn-disabled-color: #24182f;
+  --bs-btn-disabled-bg: #c6a36c;
+  --bs-btn-disabled-border-color: #c6a36c;
+}
+.display-5 { font-weight: 400; }
+.lead { font-size: 18px; line-height: 1.7; }
+.community-panel, .game-tile { background: var(--panel-bg); }
+.hub-link { color: #eee6f6; text-decoration: none; }
+.hub-link strong, .hub-link small { display: block; }
+.hub-link strong { font-size: 14px; font-weight: 400; }
+.hub-link small { color: #bcaed1; font-size: 11px; margin-top: 3px; }
+.hub-link:hover strong { color: var(--accent); }
+.hub-link:hover, .hub-link[aria-current="page"] { color: var(--accent); }
+.game-icon { display: block; width: 36px; height: 36px; flex-shrink: 0; object-fit: cover; }
+.game-cover { display: block; width: 100%; height: auto; aspect-ratio: 460 / 215; object-fit: cover; }
+.game-tile p { font-size: 14px; line-height: 1.7; }
+.footer-brand { font-size: 12px; letter-spacing: 2px; }
+.site-footer a { color: #c5b4db; font-size: 13px; text-decoration: none; }
+.site-footer a:hover { color: var(--accent); }
+.site-footer { padding-bottom: 90px !important; }
+.skip-link { position: absolute; z-index: 10; top: 0; left: 0; padding: 12px; background: var(--header-bg); color: var(--accent); }
+.back-to-top { position: fixed; z-index: 20; right: 20px; bottom: 20px; padding: 10px 22px; color: var(--accent); background: #352747; border: 1px solid #806395; text-decoration: none; }
+.back-to-top:hover { background: #4b365f; color: #ffe5af; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+@media (max-width: 767.98px) {
+  .brand-name { font-size: 14px; }
+  .back-to-top { right: 12px; bottom: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "game": "cs2",
+    "name": "Counter-Strike 2",
+    "header": "cs2-header.jpg",
+    "icon": "cs2-icon.jpg",
+    "credit": "Valve"
+  },
+  {
+    "game": "stardew-valley",
+    "name": "Stardew Valley",
+    "header": "stardew-valley-header.jpg",
+    "icon": "stardew-valley-icon.jpg",
+    "credit": "ConcernedApe"
+  },
+  {
+    "game": "oneshot",
+    "name": "OneShot",
+    "header": "oneshot-header.jpg",
+    "icon": "oneshot-icon.jpg",
+    "credit": "Future Cat LLC"
+  },
+  {
+    "game": "barotrauma",
+    "name": "Barotrauma",
+    "header": "barotrauma-header.jpg",
+    "icon": "barotrauma-icon.jpg",
+    "credit": "FakeFish, Undertow Games"
+  }
+]
