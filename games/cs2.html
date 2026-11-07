@@ -1,69 +1,405 @@
 <!DOCTYPE html>
 <html lang="ru" data-bs-theme="dark">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Counter-Strike 2: Тактический шутер. Описание игры на сайте Game Community.">
-  <title>Counter-Strike 2 — Game Community</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
-  <link rel="stylesheet" href="../css/custom.css">
-</head>
-<body>
-  <a class="visually-hidden-focusable skip-link" href="#main">К основному содержимому</a>
-  <header class="container-fluid site-header" id="page-top" tabindex="-1">
-    <nav class="navbar navbar-expand-lg py-4" aria-label="Основная навигация">
-      <div class="container">
-        <a class="navbar-brand d-flex align-items-center gap-3" href="../index.html"><span class="brand-mark" aria-hidden="true">gc</span><span class="brand-name">GAME COMMUNITY</span></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Открыть или закрыть меню"><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav ms-lg-5 gap-lg-3 mt-3 mt-lg-0">
-            <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-            <li class="nav-item"><a class="nav-link" href="../index.html#games">Видеоигры</a></li>
-            <li class="nav-item"><a class="nav-link" href="../index.html#about">О проекте</a></li>
-          </ul>
-          <span class="project-label ms-lg-auto">Учебный проект</span>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Counter-Strike 2 — Game Community: сообщества любителей видеоигр.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Game Community">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:title" content="Counter-Strike 2 — Game Community">
+    <meta property="og:description" content="Counter-Strike 2 — Game Community: сообщества любителей видеоигр.">
+    <meta property="og:image" content="../images/preview.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="735">
+    <meta property="og:image:height" content="733">
+    <meta property="og:image:alt" content="Game Community — Нико из OneShot">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Counter-Strike 2 — Game Community">
+    <meta name="twitter:description" content="Counter-Strike 2 — Game Community: сообщества любителей видеоигр.">
+    <meta name="twitter:image" content="../images/preview.jpg">
+    <meta name="twitter:image:alt" content="Game Community — Нико из OneShot">
+    <title>
+      Counter-Strike 2 — Game Community
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/jpeg" href="../images/preview.jpg">
+    <link rel="stylesheet" href="../css/style.css">
+  </head>
+  <body class="game-page game-page-cs2">
+    <a class="visually-hidden-focusable skip-link" href="#main">
+      К основному содержимому
+    </a>
+    <header class="site-header" id="page-top" tabindex="-1">
+      <nav class="navbar navbar-expand-lg py-3" aria-label="Основная навигация">
+        <div class="container">
+          <a class="navbar-brand d-flex align-items-center gap-3" href="../index.html">
+            <img class="brand-mark" src="../images/preview.jpg" width="45" height="45" alt="">
+            <span class="brand-name">
+              GAME COMMUNITY
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Открыть или закрыть меню">
+            <span class="navbar-toggler-icon">
+            </span>
+          </button>
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-lg-4 gap-lg-2 mt-3 mt-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html">
+                  Сообщество
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../catalog.html">
+                  Игры
+                </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Игровые центры
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item active" href="../games/cs2.html" aria-current="page">Counter-Strike 2</a></li>
+                  <li><a class="dropdown-item" href="../games/stardew-valley.html">Stardew Valley</a></li>
+                  <li><a class="dropdown-item" href="../games/oneshot.html">OneShot</a></li>
+                  <li><a class="dropdown-item" href="../games/barotrauma.html">Barotrauma</a></li>
+                  <li><a class="dropdown-item" href="../games/nine-sols.html">Nine Sols</a></li>
+                  <li><a class="dropdown-item" href="../games/celeste.html">Celeste</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="../product.html">В центре внимания: CS2</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../order.html">
+                  Вступить в сообщество
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="container py-4" id="main">
+      <nav aria-label="Хлебные крошки">
+        <ol class="breadcrumb small">
+          <li class="breadcrumb-item">
+            <a href="../index.html">
+              Сообщество
+            </a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="../catalog.html">
+              Игры
+            </a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">
+            Counter-Strike 2
+          </li>
+        </ol>
+      </nav>
+      <div class="d-flex align-items-center gap-3 mb-4">
+        <img class="game-icon" src="../images/cs2-icon.jpg" width="36" height="36" alt="">
+        <div>
+          <p class="eyebrow mb-1">
+            Игровой центр
+          </p>
+          <h1 class="community-title mb-0">
+            Counter-Strike 2
+          </h1>
         </div>
       </div>
-    </nav>
-  </header>
-  <main class="container my-5" id="main">
-    <nav class="mb-4" aria-label="Путь к странице"><a class="text-primary" href="../index.html#games">← К списку видеоигр</a></nav>
-    <section aria-labelledby="game-title">
-      <div class="row g-4">
-        <div class="col-12 col-lg-7">
-          <img class="game-cover border rounded" src="../images/cs2-header.jpg" width="460" height="215" alt="Обложка игры Counter-Strike 2">
+      <div class="content-tabs mb-3" role="group" aria-label="Тип материалов">
+        <button class="btn content-filter active" type="button" data-content-filter="all" aria-pressed="true" aria-controls="content-grid">
+          Все
+        </button>
+        <button class="btn content-filter" type="button" data-content-filter="news" aria-pressed="false" aria-controls="content-grid">Новости</button>
+        <button class="btn content-filter" type="button" data-content-filter="videos" aria-pressed="false" aria-controls="content-grid">
+          Видео
+        </button>
+        <button class="btn content-filter" type="button" data-content-filter="artwork" aria-pressed="false" aria-controls="content-grid">
+          Иллюстрации
+        </button>
+      </div>
+      <section class="game-overview card mb-4" aria-labelledby="game-about">
+        <div class="card-header d-flex flex-wrap justify-content-between gap-2">
+          <span class="small text-body-secondary">
+            Об игре
+          </span>
+          <span class="badge badge-soft">
+            Командная игра
+          </span>
         </div>
-        <div class="col-12 col-lg-5">
-          <div class="community-panel p-4 border rounded h-100">
-            <p class="small text-primary mb-3">Тактический шутер</p>
-            <h1 class="h2 d-flex align-items-center gap-3 mb-4" id="game-title"><img class="game-icon" src="../images/cs2-icon.jpg" width="36" height="36" alt="">Counter-Strike 2</h1>
-            <h2 class="h5 mb-3">Об игре</h2>
-            <p class="text-body-secondary">Более двух десятилетий Counter-Strike служит примером первоклассной соревновательной игры, путь развития которой определяют миллионы игроков со всего мира. Теперь пришло время нового этапа — Counter-Strike 2.</p>
-            <p class="small text-body-secondary mb-0">Разработчик: Valve</p>
+        <div class="card-body">
+          <div class="row g-4">
+            <div class="col-12 col-md-5">
+              <img class="game-cover" src="../images/cs2-header.jpg" width="460" height="215" alt="Обложка Counter-Strike 2">
+            </div>
+            <div class="col-12 col-md-7">
+              <h2 class="h5" id="game-about">
+                Counter-Strike 2
+              </h2>
+              <p class="text-body-secondary">
+                Более двух десятилетий Counter-Strike служит примером первоклассной соревновательной игры, путь развития которой определяют миллионы игроков со всего мира. Теперь пришло время нового этапа — Counter-Strike 2.
+              </p>
+              <p class="small text-body-secondary">
+                Тактический шутер · Valve
+              </p>
+              <div class="d-flex flex-wrap gap-2">
+                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#joinModal" data-game="cs2">
+                  Присоединиться
+                </button>
+                <a class="btn btn-outline-primary" href="../order.html?game=cs2">
+                  Полная заявка
+                </a>
+                <a class="btn btn-outline-secondary" href="../catalog.html">
+                  Все игры
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <nav class="d-flex flex-wrap gap-3 mb-4" aria-label="Другие игровые центры">
+        <a class="game-switch-link current" href="../games/cs2.html">Counter-Strike 2</a>
+        <a class="game-switch-link" href="../games/stardew-valley.html">Stardew Valley</a>
+        <a class="game-switch-link" href="../games/oneshot.html">OneShot</a>
+        <a class="game-switch-link" href="../games/barotrauma.html">Barotrauma</a>
+        <a class="game-switch-link" href="../games/nine-sols.html">Nine Sols</a>
+        <a class="game-switch-link" href="../games/celeste.html">Celeste</a>
+      </nav>
+      <section class="mb-4" aria-labelledby="facts-title">
+        <h2 class="h5 mb-3" id="facts-title">
+          Об игре в деталях
+        </h2>
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered align-middle mb-0" aria-labelledby="facts-title">
+            <tbody>
+              <tr>
+                <th scope="row">
+                  Жанр
+                </th>
+                <td>
+                  Тактический шутер
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  Разработчик
+                </th>
+                <td>
+                  Valve
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  Формат игры
+                </th>
+                <td>
+                  Командные матчи
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section aria-labelledby="feed-title">
+        <div class="feed-heading">
+          <h2 class="h6 mb-1" id="feed-title">
+            Материалы разработчиков и сообщества
+          </h2>
+          <p class="small text-body-secondary mb-0">
+            Лента активности ·
+            <span id="content-count" role="status" aria-live="polite">
+              Материалов: 4
+            </span>
+          </p>
+        </div>
+        <div class="row g-3 mt-1" id="content-grid">
+          <div class="col-12 col-md-6 content-item" data-content-type="news">
+            <article class="card feed-card h-100" aria-labelledby="activity-cs2-0">
+              <div class="card-body">
+                <p class="eyebrow">Обновление</p>
+                <h3 class="h4" id="activity-cs2-0">Обновление Counter-Strike 2: режим Retakes</h3>
+                <p class="text-body-secondary mt-3">В Retakes уменьшены паузы между раундами. Обезвреживание бомбы завершается мгновенно, когда времени достаточно и действию уже не мешают активные гранаты.</p>
+                <ul class="guide-steps text-body-secondary">
+                  <li>Расширены инструменты создания карт.</li>
+                  <li>Добавлены функции управления ботами.</li>
+                </ul>
+              </div>
+              <div class="card-footer small text-body-secondary">
+                <time datetime="2026-11-04">4 ноября 2026</time>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 content-item" data-content-type="videos">
+            <article class="card feed-card h-100">
+              <div class="card-body">
+                <p class="eyebrow">
+                  Видео
+                </p>
+                <h3 class="h4">
+                  Трейлер игры
+                </h3>
+                <a class="video-preview mt-3" href="https://www.youtube.com/watch?v=nSE38xjMLqE" aria-label="Посмотреть трейлер Counter-Strike 2 на YouTube">
+                  <img src="../images/cs2-header.jpg" width="460" height="215" alt="Обложка Counter-Strike 2" loading="lazy">
+                  <span class="play-symbol" aria-hidden="true">
+                    ▶
+                  </span>
+                </a>
+                <p class="small text-body-secondary mt-3 mb-0">
+                  Познакомьтесь с атмосферой игры в трейлере.
+                </p>
+              </div>
+              <div class="card-footer small text-body-secondary">
+                Valve
+                <a class="d-block" href="https://www.youtube.com/watch?v=nSE38xjMLqE">
+                  Смотреть на YouTube ↗
+                </a>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 content-item" data-content-type="artwork">
+            <article class="card feed-card h-100">
+              <a href="../images/cs2-illustration.jpg" aria-label="Открыть изображение Counter-Strike 2 в полном размере">
+                <img class="card-img-top game-illustration" src="../images/cs2-illustration.jpg" width="1440" height="1080" alt="На точке B — Counter-Strike 2" loading="lazy">
+              </a>
+              <div class="card-body">
+                <p class="eyebrow">Иллюстрация</p>
+                <h3 class="h4">На точке B</h3>
+                <p class="text-body-secondary">Игровой момент на точке B: команда, оружие и детали знакомой карты.</p>
+              </div>
+              <div class="card-footer small text-body-secondary">Counter-Strike 2</div>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 content-item" data-content-type="news">
+            <article class="card feed-card h-100" aria-labelledby="activity-cs2-1">
+              <div class="card-body">
+                <p class="eyebrow">Обновление</p>
+                <h3 class="h4" id="activity-cs2-1">Настройки тихой перезарядки</h3>
+                <p class="text-body-secondary mt-3">Тихую перезарядку теперь можно включать удержанием или переключением кнопки. Исправлены лишние звуки перезарядки, отображение жидкостей на видеокартах AMD и ошибки перемотки записей матчей.</p>
+                <ul class="guide-steps text-body-secondary">
+                  <li>В режиме переключения кнопку можно отпустить.</li>
+                  <li>Повторное нажатие возвращает быструю перезарядку.</li>
+                </ul>
+              </div>
+              <div class="card-footer small text-body-secondary">
+                <time datetime="2026-10-28">28 октября 2026</time>
+              </div>
+            </article>
+          </div>
+        </div>
+        <p class="alert alert-secondary mt-3" id="content-empty" role="status" hidden>
+          Материалов этого типа пока нет. Выберите «Все».
+        </p>
+      </section>
+    </main>
+    <footer class="site-footer py-4 mt-5">
+      <div class="container">
+        <div class="row align-items-center g-3">
+          <div class="col-12 col-md-8">
+            <p class="footer-brand mb-1">
+              GAME COMMUNITY
+            </p>
+            <p class="small text-body-secondary mb-0">
+              &copy;
+              2026 · Миры, истории и люди, которые любят играть.
+            </p>
+          </div>
+          <div class="col-12 col-md-4 text-md-end">
+            <a href="../catalog.html">
+              Все игры
+            </a>
+            <a class="ms-3" href="../order.html">
+              Вступить
+            </a>
           </div>
         </div>
       </div>
-    </section>
-    <nav class="community-panel border rounded p-4 mt-4" aria-label="Страницы видеоигр">
-      <h2 class="h5 mb-3">Другие игровые миры</h2>
-      <ul class="list-unstyled mb-0">
-            <li class="mb-2"><a class="hub-link" href="cs2.html" aria-current="page">Counter-Strike 2</a></li>
-            <li class="mb-2"><a class="hub-link" href="stardew-valley.html">Stardew Valley</a></li>
-            <li class="mb-2"><a class="hub-link" href="oneshot.html">OneShot</a></li>
-            <li class="mb-2"><a class="hub-link" href="barotrauma.html">Barotrauma</a></li>
-      </ul>
-    </nav>
-  </main>
-  <footer class="site-footer py-4 mt-5">
-    <div class="container">
-      <div class="row align-items-center g-3">
-        <div class="col-12 col-md-8"><p class="footer-brand mb-1">GAME COMMUNITY</p><p class="small text-body-secondary mb-0">&copy; 2026 · Учебный сайт сообществ любителей видеоигр.</p></div>
-        <div class="col-12 col-md-4 text-md-end"><a href="../index.html#games">Видеоигры</a><a class="ms-3" href="../index.html#about">О проекте</a></div>
+    </footer>
+    <a class="back-to-top" href="#page-top" aria-label="Вернуться к началу страницы">
+      <span aria-hidden="true">
+        ↑
+      </span>
+      Наверх
+    </a>
+    <div class="modal fade" id="joinModal" tabindex="-1" aria-labelledby="joinModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title h5" id="joinModalTitle">
+              Присоединиться к сообществу
+            </h2>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Закрыть">
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="small text-body-secondary">
+              Найдите людей с тем же увлечением.
+            </p>
+            <form class="needs-validation" id="quick-join-form" data-application-form novalidate>
+              <div class="alert alert-success" data-form-result role="status" tabindex="-1" hidden>
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="quick-name">
+                  Как к вам обращаться *
+                </label>
+                <input class="form-control" id="quick-name" name="name" type="text" required autocomplete="name" maxlength="60" minlength="2" data-trim="true">
+                <div class="invalid-feedback">
+                  Введите имя: от 2 до 60 символов.
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="quick-email">
+                  E-mail *
+                </label>
+                <input class="form-control" id="quick-email" name="email" type="email" required autocomplete="email" maxlength="254">
+                <div class="invalid-feedback">
+                  Укажите корректный e-mail.
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="quick-game">
+                  Игровое сообщество *
+                </label>
+                <select class="form-select" id="quick-game" name="game" required>
+                  <option value="">Выберите игру</option>
+                  <option value="cs2">Counter-Strike 2</option>
+                  <option value="stardew-valley">Stardew Valley</option>
+                  <option value="oneshot">OneShot</option>
+                  <option value="barotrauma">Barotrauma</option>
+                  <option value="nine-sols">Nine Sols</option>
+                  <option value="celeste">Celeste</option>
+                </select>
+                <div class="invalid-feedback">
+                  Выберите игру.
+                </div>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" id="quick-agree" type="checkbox" name="agree" required>
+                <label class="form-check-label small" for="quick-agree">
+                  Согласен на обработку указанных данных *
+                </label>
+                <div class="invalid-feedback">
+                  Подтвердите согласие.
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">
+              Закрыть
+            </button>
+            <button class="btn btn-primary" type="submit" form="quick-join-form">
+              Подготовить заявку
+            </button>
+          </div>
+        </div>
       </div>
     </div>
-  </footer>
-  <a class="back-to-top" href="#page-top" aria-label="Вернуться к началу страницы"><span aria-hidden="true">↑</span> Наверх</a>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+    <script src="../js/main.js">
+    </script>
+  </body>
 </html>
