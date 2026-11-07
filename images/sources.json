@@ -4,27 +4,53 @@
     "name": "Counter-Strike 2",
     "header": "cs2-header.jpg",
     "icon": "cs2-icon.jpg",
-    "credit": "Valve"
+    "credit": "Valve",
+    "background": "cs2-header.jpg",
+    "illustration": "cs2-illustration.jpg"
   },
   {
     "game": "stardew-valley",
     "name": "Stardew Valley",
     "header": "stardew-valley-header.jpg",
     "icon": "stardew-valley-icon.jpg",
-    "credit": "ConcernedApe"
+    "credit": "ConcernedApe",
+    "background": "stardew-valley-header.jpg",
+    "illustration": "stardew-valley-illustration.jpg"
   },
   {
     "game": "oneshot",
     "name": "OneShot",
     "header": "oneshot-header.jpg",
     "icon": "oneshot-icon.jpg",
-    "credit": "Future Cat LLC"
+    "credit": "Future Cat LLC",
+    "background": "oneshot-header.jpg",
+    "illustration": "oneshot-illustration.jpg"
   },
   {
     "game": "barotrauma",
     "name": "Barotrauma",
     "header": "barotrauma-header.jpg",
     "icon": "barotrauma-icon.jpg",
-    "credit": "FakeFish, Undertow Games"
+    "credit": "FakeFish, Undertow Games",
+    "background": "barotrauma-header.jpg",
+    "illustration": "barotrauma-illustration.jpg"
+  },
+  {
+    "game": "nine-sols",
+    "name": "Nine Sols",
+    "header": "nine-sols-header.jpg",
+    "icon": "nine-sols-icon.jpg",
+    "credit": "RedCandleGames",
+    "background": "nine-sols-header.jpg",
+    "illustration": "nine-sols-illustration.jpg"
+  },
+  {
+    "game": "celeste",
+    "name": "Celeste",
+    "header": "celeste-header.jpg",
+    "icon": "celeste-icon.jpg",
+    "credit": "Maddy Makes Games Inc., Extremely OK Games, Ltd.",
+    "background": "celeste-header.jpg",
+    "illustration": "celeste-illustration.jpg"
   }
 ]
