@@ -54,14 +54,6 @@ GitHub Pages: [открыть сайт](https://imbread300.github.io/game-commun
 
 Используются `vendor/bootstrap/css/bootstrap.min.css` и `vendor/bootstrap/js/bootstrap.bundle.min.js`. Собственный `css/style.css` подключается после Bootstrap. В `vendor/bootstrap/` сохранена лицензия библиотеки.
 
-## Самостоятельные доработки
-
-Шесть игровых центров, оформление в палитре OneShot, ленты материалов с фильтрами, выбор игры в заявке по ссылке, кнопка «Наверх» и реакции Нико на ошибки, успешное заполнение, выбор сообщества и сброс формы.
-
-## Репозиторий
-
-[Исходный код для сдачи](https://github.com/ImBread300/game-community).
-
 ## Используемые технологии
 
 HTML5, Bootstrap 5.3.3 (локально), CSS3, JavaScript, Git и GitHub. Собственные стили дополняют компоненты и сетку Bootstrap.
