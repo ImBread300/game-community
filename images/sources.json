@@ -24,7 +24,14 @@
     "icon": "oneshot-icon.jpg",
     "credit": "Future Cat LLC",
     "background": "oneshot-header.jpg",
-    "illustration": "oneshot-illustration.jpg"
+    "illustration": "oneshot-illustration.jpg",
+    "dialogue_portraits": {
+      "sad": "niko/niko_sad.png",
+      "happy": "niko/niko_pancakes.png",
+      "neutral": "niko/niko.png",
+      "surprised": "niko/niko_pancakes.png",
+      "filling": "niko/niko5.png"
+    }
   },
   {
     "game": "barotrauma",
