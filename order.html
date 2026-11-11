@@ -37,30 +37,15 @@
         <div class="container">
           <a class="navbar-brand d-flex align-items-center gap-3" href="index.html">
             <img class="brand-mark" src="images/preview.jpg" width="45" height="45" alt="">
-            <span class="brand-name">
-              GAME COMMUNITY
-            </span>
+            <span class="brand-name">GAME COMMUNITY</span>
           </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Открыть или закрыть меню">
-            <span class="navbar-toggler-icon">
-            </span>
-          </button>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Открыть или закрыть меню"><span class="navbar-toggler-icon"></span></button>
           <div class="collapse navbar-collapse" id="mainNav">
-            <ul class="navbar-nav ms-lg-4 gap-lg-2 mt-3 mt-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">
-                  Сообщество
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="catalog.html">
-                  Игры
-                </a>
-              </li>
+            <ul class="navbar-nav ms-lg-3 gap-lg-1 mt-3 mt-lg-0">
+              <li class="nav-item"><a class="nav-link" href="index.html">Сообщества</a></li>
+              <li class="nav-item"><a class="nav-link" href="catalog.html">Игры</a></li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Игровые центры
-                </a>
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Игровые центры</a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="games/cs2.html">Counter-Strike 2</a></li>
                   <li><a class="dropdown-item" href="games/stardew-valley.html">Stardew Valley</a></li>
@@ -72,17 +57,15 @@
                   <li><a class="dropdown-item" href="product.html">В центре внимания: CS2</a></li>
                 </ul>
               </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="order.html" aria-current="page">
-                  Вступить в сообщество
-                </a>
-              </li>
+              <li class="nav-item"><a class="nav-link" href="about.html">О сайте</a></li>
             </ul>
+            <a class="btn btn-primary ms-lg-auto mt-3 mt-lg-0 site-join-button" href="order.html" aria-current="page">Присоединиться</a>
           </div>
         </div>
       </nav>
     </header>
     <main class="container py-4 py-lg-5" id="main">
+      <nav aria-label="Хлебные крошки"><ol class="breadcrumb small"><li class="breadcrumb-item"><a href="index.html">Сообщества</a></li><li class="breadcrumb-item active" aria-current="page">Присоединиться</li></ol></nav>
       <p class="eyebrow">
         Знакомство начинается здесь
       </p>
@@ -90,7 +73,10 @@
         Вступить в сообщество
       </h1>
       <p class="intro">
-        Расскажите немного о себе и выберите игру.
+        Найдите людей, с которыми хочется обсуждать любимые игры, делиться открытиями и отправляться в новые приключения. Выберите своё сообщество и расскажите немного о себе.
+      </p>
+      <p class="text-body-secondary">
+        Неважно, только ли вы знакомитесь с игрой или уже знаете каждый её уголок. Поводом для знакомства может стать совместное прохождение, интерес к сюжету, поиск секретов или желание поделиться собственным творчеством. Начните с того, что нравится именно вам.
       </p>
       <div class="row g-4 mt-2">
         <div class="col-12 col-lg-8">
@@ -101,6 +87,9 @@
               </h2>
             </div>
             <div class="card-body p-4">
+              <p class="text-body-secondary">
+                Укажите имя, по которому к вам удобно обращаться, игровой ник и e-mail. Затем выберите одну из шести игр. Если пока сомневаетесь, загляните в каталог: на страницах игровых центров собраны описания, характеристики и материалы, которые помогут определиться.
+              </p>
               <div class="alert alert-info" role="alert">
                 Поля со звёздочкой обязательны.
               </div>
@@ -163,6 +152,9 @@
                     </label>
                     <textarea class="form-control" id="join-comment" name="comment" rows="4" maxlength="1000" placeholder="Любимый режим, интерес к кооперативу, творчеству или обсуждениям…">
                     </textarea>
+                    <p class="form-text mb-0">
+                      Например, расскажите, ищете ли вы напарников, проходите игру впервые или хотите обсуждать её мир. Комментарий необязателен — достаточно нескольких предложений о ваших интересах.
+                    </p>
                   </div>
                   <div class="col-12">
                     <div class="form-check">
@@ -195,17 +187,26 @@
             </h2>
             <ol class="small text-body-secondary guide-steps ps-3">
               <li>
-                Выберите любимую игру.
+                Выберите любимую игру или ту, с которой хотите познакомиться ближе.
               </li>
               <li>
-                Укажите имя, ник и контакт.
+                Укажите имя, ник и контакт. При желании добавьте несколько слов о себе и своих игровых интересах.
               </li>
               <li>
-                Проверьте результат заполнения.
+                Нажмите «Подготовить заявку» и проверьте результат. Если какое-то поле заполнено неверно, рядом появится подсказка.
               </li>
             </ol>
             <p class="small text-body-secondary mb-0">
-              Расскажите о своих интересах, чтобы выбрать подходящее игровое сообщество.
+              Нико будет рядом во время заполнения: поможет заметить ошибку и порадуется, когда всё будет готово. Кнопка «Очистить» позволяет начать заново.
+            </p>
+            <hr class="my-4">
+            <h3 class="h6">Каждому найдётся тема</h3>
+            <p class="small text-body-secondary">
+              Тактика и командная игра в CS2, устройство фермы в Stardew Valley, загадки OneShot, жизнь экипажа в Barotrauma, парирования в Nine Sols или сложные маршруты Celeste — расскажите, что увлекает вас больше всего.
+            </p>
+            <h3 class="h6">Уважение к другим игрокам</h3>
+            <p class="small text-body-secondary mb-0">
+              Общайтесь доброжелательно, уважайте разный уровень опыта и предупреждайте о сюжетных спойлерах. За каждым ником стоит человек со своим темпом игры и своими впечатлениями.
             </p>
             <a class="btn btn-outline-primary mt-4" href="catalog.html">
               Вернуться к играм
@@ -216,33 +217,49 @@
     </main>
     <footer class="site-footer py-4 mt-5">
       <div class="container">
-        <div class="row align-items-center g-3">
-          <div class="col-12 col-md-8">
-            <p class="footer-brand mb-1">
-              GAME COMMUNITY
-            </p>
-            <p class="small text-body-secondary mb-0">
-              &copy;
-              2026 · Миры, истории и люди, которые любят играть.
-            </p>
+        <div class="row g-4 align-items-start">
+          <div class="col-12 col-lg-4">
+            <a class="footer-logo d-inline-flex align-items-center gap-3" href="index.html">
+              <img class="footer-preview" src="images/preview.jpg" width="64" height="64" alt="" loading="lazy">
+              <span class="footer-name">GAME COMMUNITY</span>
+            </a>
+            <p class="footer-slogan small text-body-secondary mt-3 mb-0">Миры, истории и люди, которые любят играть.</p>
           </div>
-          <div class="col-12 col-md-4 text-md-end">
-            <a href="catalog.html">
-              Все игры
-            </a>
-            <a class="ms-3" href="order.html">
-              Вступить
-            </a>
+          <div class="col-12 col-md-6 col-lg-4 text-lg-center">
+            <nav class="footer-nav d-flex flex-wrap gap-2 justify-content-lg-center" aria-label="Навигация в подвале">
+              <a class="btn btn-outline-secondary btn-sm" href="index.html">Сообщества</a>
+              <a class="btn btn-outline-secondary btn-sm" href="catalog.html">Игры</a>
+              <a class="btn btn-outline-secondary btn-sm" href="about.html">О сайте</a>
+              <div class="dropup">
+                <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="footerGameCenters" data-bs-toggle="dropdown" aria-expanded="false">Игровые центры</button>
+                <ul class="dropdown-menu" aria-labelledby="footerGameCenters">
+                  <li><a class="dropdown-item" href="games/cs2.html">Counter-Strike 2</a></li>
+                  <li><a class="dropdown-item" href="games/stardew-valley.html">Stardew Valley</a></li>
+                  <li><a class="dropdown-item" href="games/oneshot.html">OneShot</a></li>
+                  <li><a class="dropdown-item" href="games/barotrauma.html">Barotrauma</a></li>
+                  <li><a class="dropdown-item" href="games/nine-sols.html">Nine Sols</a></li>
+                  <li><a class="dropdown-item" href="games/celeste.html">Celeste</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="product.html">В центре внимания: CS2</a></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 footer-contact-column">
+            <address class="footer-contacts d-flex flex-column align-items-start gap-3 mb-0">
+              <a class="footer-contact" href="mailto:game-community@mail.ru"><svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg><span>game-community@mail.ru</span></a>
+              <a class="footer-contact" href="https://t.me/gamecommunity" target="_blank" rel="noopener noreferrer"><svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="m21 3-4 18-6-6-4 3 1-7L21 3ZM8 11l9-5-6 9M3 9l18-6-13 8-5-2Z"/></svg><span>Наш Telegram-канал</span></a>
+              <a class="footer-contact" href="https://vk.com/gamecommunity" target="_blank" rel="noopener noreferrer"><svg class="contact-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="6" fill="currentColor"/><path d="m5 8 3 8h2l2-8M14 8v8m5-8-5 4 5 4" stroke="#171326" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Наше сообщество ВК</span></a>
+            </address>
+            <div class="mt-4"><a class="btn btn-primary footer-join" href="order.html">Присоединиться</a></div>
           </div>
         </div>
+        <p class="footer-copyright small text-body-secondary text-center">&copy; 2026 Все права защищены.</p>
       </div>
     </footer>
-    <a class="back-to-top" href="#page-top" aria-label="Вернуться к началу страницы">
-      <span aria-hidden="true">
-        ↑
-      </span>
-      Наверх
-    </a>
+    <div class="page-actions" aria-label="Быстрые действия">
+      <a class="back-to-top" href="#page-top" aria-label="Вернуться к началу страницы">Наверх</a>
+    </div>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js">
     </script>
     <script src="js/main.js">

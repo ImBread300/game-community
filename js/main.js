@@ -18,6 +18,7 @@ if (contentFilters.length) {
     });
     count.textContent = `Материалов: ${visible}`;
     empty.hidden = visible !== 0;
+    document.querySelector('#game-feed')?.scrollIntoView({ block: 'start' });
   }));
 }
 

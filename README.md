@@ -66,6 +66,7 @@ game-community/
 ├── catalog.html           # Каталог сообществ
 ├── product.html           # Подробная страница CS2
 ├── order.html             # Заявка на участие
+├── about.html             # О сайте и контакты
 ├── games/                 # Страницы 6 игр
 ├── css/style.css          # Общая палитра и стили
 ├── js/main.js             # Фильтры материалов, формы и выбор игры
