@@ -192,3 +192,55 @@ body { --bs-tertiary-bg: #211a31; --bs-emphasis-color: #eee6f6; }
   .niko-feedback { align-items: flex-start; gap: 12px; padding: 12px; }
   .niko-portrait { flex-basis: 64px; width: 64px; height: 64px; }
 }
+
+/* Общая навигация и три колонки подвала. */
+.site-join-button { white-space: nowrap; }
+.footer-preview { width: 64px; height: 64px; object-fit: cover; border-radius: 8px; border: 1px solid #806395; }
+.site-footer .footer-logo { color: #eee6f6; }
+.footer-name { font-size: 16px; font-weight: 700; letter-spacing: 1px; }
+.footer-slogan { max-width: 310px; line-height: 1.6; }
+.footer-contacts { font-style: normal; }
+.footer-contact { display: inline-flex; align-items: center; gap: 10px; overflow-wrap: anywhere; }
+.contact-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--accent); }
+@media (max-width: 991.98px) {
+  .site-join-button { margin-bottom: 8px; }
+}
+
+.feature-illustration { display: block; width: 100%; height: 120px; object-fit: contain; }
+.footer-copyright { margin: 28px 0 0; padding-top: 20px; border-top: 1px solid var(--bs-border-color); }
+.page-actions { position: fixed; z-index: 20; right: 20px; bottom: 20px; display: flex; flex-direction: column; gap: 8px; }
+.page-actions .back-to-top { position: static; text-align: center; }
+@media (max-width: 767.98px) {
+  .page-actions { right: 12px; bottom: 12px; }
+}
+
+.site-footer .footer-join { color: var(--bs-btn-color); }
+.site-footer .footer-join:hover { color: var(--bs-btn-hover-color); }
+
+/* Обложки игровых центров остаются под текстом карточек. */
+.about-game-card { position: relative; isolation: isolate; overflow: hidden; min-height: 240px; text-shadow: 0 1px 3px #100e1b; }
+.about-game-card > * { position: relative; z-index: 1; }
+.about-game-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: linear-gradient(180deg, #100e1bf0 0%, #100e1bd9 60%, #100e1b59 100%), var(--about-game-cover);
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
+}
+
+.footer-contact-column { display: flex; flex-direction: column; align-items: flex-end; }
+.footer-contact-column .footer-contacts { width: max-content; max-width: 100%; }
+
+.about-game-cs2 { --about-game-cover: url('../images/cs2-header.jpg'); }
+.about-game-stardew-valley { --about-game-cover: url('../images/stardew-valley-header.jpg'); }
+.about-game-oneshot { --about-game-cover: url('../images/oneshot-header.jpg'); }
+.about-game-barotrauma { --about-game-cover: url('../images/barotrauma-header.jpg'); }
+.about-game-nine-sols { --about-game-cover: url('../images/nine-sols-header.jpg'); }
+.about-game-celeste { --about-game-cover: url('../images/celeste-header.jpg'); }
+
+.about-game-card .text-body-secondary { color: #f2edf8 !important; line-height: 1.75; }
+.about-game-card h3 a { color: #ffe2a0; text-decoration-thickness: 1px; text-underline-offset: 4px; }
