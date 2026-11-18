@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/theme.js"></script>
+    <script src="../js/layout.js" defer></script>
     <meta name="description" content="Barotrauma: выживание экипажа подлодки в глубинах Европы. Описание, новости и материалы в Game Community.">
     <link rel="canonical" href="https://imbread300.github.io/game-community/games/barotrauma.html">
     <meta property="og:url" content="https://imbread300.github.io/game-community/games/barotrauma.html">
@@ -32,38 +34,7 @@
     <a class="visually-hidden-focusable skip-link" href="#main">
       К основному содержимому
     </a>
-    <header class="site-header">
-      <nav class="navbar navbar-expand-lg py-3" aria-label="Основная навигация">
-        <div class="container">
-          <a class="navbar-brand d-flex align-items-center gap-3" href="../index.html">
-            <img class="brand-mark" src="../images/preview.jpg" width="45" height="45" alt="">
-            <span class="brand-name">GAME COMMUNITY</span>
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Открыть или закрыть меню"><span class="navbar-toggler-icon"></span></button>
-          <div class="collapse navbar-collapse" id="mainNav">
-            <ul class="navbar-nav ms-lg-3 gap-lg-1 mt-3 mt-lg-0">
-              <li class="nav-item"><a class="nav-link" href="../index.html">Сообщества</a></li>
-              <li class="nav-item"><a class="nav-link" href="../catalog.html">Игры</a></li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Игровые центры</a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="../games/cs2.html">Counter-Strike 2</a></li>
-                  <li><a class="dropdown-item" href="../games/stardew-valley.html">Stardew Valley</a></li>
-                  <li><a class="dropdown-item" href="../games/oneshot.html">OneShot</a></li>
-                  <li><a class="dropdown-item active" href="../games/barotrauma.html" aria-current="page">Barotrauma</a></li>
-                  <li><a class="dropdown-item" href="../games/nine-sols.html">Nine Sols</a></li>
-                  <li><a class="dropdown-item" href="../games/celeste.html">Celeste</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="../product.html">В центре внимания: CS2</a></li>
-                </ul>
-              </li>
-              <li class="nav-item"><a class="nav-link" href="../about.html">О сайте</a></li>
-            </ul>
-            <a class="btn btn-primary ms-lg-auto mt-3 mt-lg-0 site-join-button" href="../order.html">Присоединиться</a>
-          </div>
-        </div>
-      </nav>
-    </header>
+    <header class="site-header" data-site-header></header>
     <main class="container py-4" id="main">
       <nav aria-label="Хлебные крошки">
         <ol class="breadcrumb small">
@@ -126,12 +97,9 @@
                 Кооперативное выживание · FakeFish, Undertow Games
               </p>
               <div class="d-flex flex-wrap gap-2">
-                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#joinModal" data-game="barotrauma">
-                  Присоединиться
+                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#joinModal">
+                  Создать профиль
                 </button>
-                <a class="btn btn-outline-primary" href="../order.html?game=barotrauma">
-                  Полная заявка
-                </a>
                 <a class="btn btn-outline-secondary" href="../catalog.html">
                   Все игры
                 </a>
@@ -183,7 +151,7 @@
           <p class="small text-body-secondary mb-0">
             Лента активности ·
             <span id="content-count" role="status" aria-live="polite">
-              Материалов: 4
+              Материалов: 5
             </span>
           </p>
         </div>
@@ -191,6 +159,8 @@
         <button class="btn content-filter active" type="button" data-content-filter="all" aria-pressed="true" aria-controls="content-grid">
           Все
         </button>
+        <button class="btn content-filter" type="button" data-content-filter="favorites" aria-pressed="false" aria-controls="content-grid">Избранное</button>
+        <button class="btn content-filter" type="button" data-content-filter="guides" aria-pressed="false" aria-controls="content-grid">Руководства</button>
         <button class="btn content-filter" type="button" data-content-filter="news" aria-pressed="false" aria-controls="content-grid">Новости</button>
         <button class="btn content-filter" type="button" data-content-filter="videos" aria-pressed="false" aria-controls="content-grid">
           Видео
@@ -200,6 +170,22 @@
         </button>
       </div>
         <div class="row g-3 mt-1" id="content-grid">
+          <div class="col-12 col-md-6 content-item" data-content-type="guides">
+            <article class="card feed-card guide-card h-100">
+              <button class="guide-cover-button" type="button" data-bs-toggle="modal" data-bs-target="#guideModal" data-guide="barotrauma" aria-label="Открыть руководство: Barotrauma: подготовка экипажа к экспедиции">
+                <img class="guide-avatar" src="../images/guides/barotrauma.jpg" width="96" height="96" alt="" loading="lazy">
+                <span class="guide-cover-label">Руководство</span>
+              </button>
+              <div class="card-body d-flex flex-column">
+                <p class="eyebrow">Основы игры · 4 раздела</p>
+                <h3 class="h4">Barotrauma: подготовка экипажа к экспедиции</h3>
+                <p class="text-body-secondary">Первые обязанности, приоритеты ботов, ремонт и снаряжение перед выходом из подлодки.</p>
+                <button class="btn btn-outline-primary align-self-start mt-auto" type="button" data-bs-toggle="modal" data-bs-target="#guideModal" data-guide="barotrauma">Читать руководство</button>
+              </div>
+              <div class="card-footer small text-body-secondary">Barotrauma · Для начинающих</div>
+            </article>
+          </div>
+
           <div class="col-12 col-md-6 content-item" data-content-type="news">
             <article class="card feed-card h-100" aria-labelledby="activity-barotrauma-0">
               <div class="card-body">
@@ -274,52 +260,11 @@
           </div>
         </div>
         <p class="alert alert-secondary mt-3" id="content-empty" role="status" hidden>
-          Материалов этого типа пока нет. Выберите «Все».
+          Здесь пока нет материалов. Добавьте их в избранное или выберите «Все».
         </p>
       </section>
     </main>
-    <footer class="site-footer py-4 mt-5">
-      <div class="container">
-        <div class="row g-4 align-items-start">
-          <div class="col-12 col-lg-4">
-            <a class="footer-logo d-inline-flex align-items-center gap-3" href="../index.html">
-              <img class="footer-preview" src="../images/preview.jpg" width="64" height="64" alt="" loading="lazy">
-              <span class="footer-name">GAME COMMUNITY</span>
-            </a>
-            <p class="footer-slogan small text-body-secondary mt-3 mb-0">Миры, истории и люди, которые любят играть.</p>
-          </div>
-          <div class="col-12 col-md-6 col-lg-4 text-lg-center">
-            <nav class="footer-nav d-flex flex-wrap gap-2 justify-content-lg-center" aria-label="Навигация в подвале">
-              <a class="btn btn-outline-secondary btn-sm" href="../index.html">Сообщества</a>
-              <a class="btn btn-outline-secondary btn-sm" href="../catalog.html">Игры</a>
-              <a class="btn btn-outline-secondary btn-sm" href="../about.html">О сайте</a>
-              <div class="dropup">
-                <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="footerGameCenters" data-bs-toggle="dropdown" aria-expanded="false">Игровые центры</button>
-                <ul class="dropdown-menu" aria-labelledby="footerGameCenters">
-                  <li><a class="dropdown-item" href="../games/cs2.html">Counter-Strike 2</a></li>
-                  <li><a class="dropdown-item" href="../games/stardew-valley.html">Stardew Valley</a></li>
-                  <li><a class="dropdown-item" href="../games/oneshot.html">OneShot</a></li>
-                  <li><a class="dropdown-item active" href="../games/barotrauma.html" aria-current="page">Barotrauma</a></li>
-                  <li><a class="dropdown-item" href="../games/nine-sols.html">Nine Sols</a></li>
-                  <li><a class="dropdown-item" href="../games/celeste.html">Celeste</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="../product.html">В центре внимания: CS2</a></li>
-                </ul>
-              </div>
-            </nav>
-          </div>
-          <div class="col-12 col-md-6 col-lg-4 footer-contact-column">
-            <address class="footer-contacts d-flex flex-column align-items-start gap-3 mb-0">
-              <a class="footer-contact" href="mailto:game-community@mail.ru"><svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg><span>game-community@mail.ru</span></a>
-              <a class="footer-contact" href="https://t.me/gamecommunity" target="_blank" rel="noopener noreferrer"><svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="m21 3-4 18-6-6-4 3 1-7L21 3ZM8 11l9-5-6 9M3 9l18-6-13 8-5-2Z"/></svg><span>Наш Telegram-канал</span></a>
-              <a class="footer-contact" href="https://vk.com/gamecommunity" target="_blank" rel="noopener noreferrer"><svg class="contact-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="6" fill="currentColor"/><path d="m5 8 3 8h2l2-8M14 8v8m5-8-5 4 5 4" stroke="#171326" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Наше сообщество ВК</span></a>
-            </address>
-            <div class="mt-4"><a class="btn btn-primary footer-join" href="../order.html">Присоединиться</a></div>
-          </div>
-        </div>
-        <p class="footer-copyright small text-body-secondary text-center">&copy; 2026 Все права защищены.</p>
-      </div>
-    </footer>
+    <footer class="site-footer py-4 mt-5" data-site-footer></footer>
     <div class="page-actions" aria-label="Быстрые действия">
       <a class="back-to-top" href="#page-top" aria-label="Вернуться к началу страницы">Наверх</a>
     </div>
@@ -328,7 +273,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h2 class="modal-title h5" id="joinModalTitle">
-              Присоединиться к сообществу
+              Создать профиль
             </h2>
             <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Закрыть">
             </button>
@@ -358,23 +303,6 @@
                   Укажите корректный e-mail.
                 </div>
               </div>
-              <div class="mb-3">
-                <label class="form-label" for="quick-game">
-                  Игровое сообщество *
-                </label>
-                <select class="form-select" id="quick-game" name="game" required>
-                  <option value="">Выберите игру</option>
-                  <option value="cs2">Counter-Strike 2</option>
-                  <option value="stardew-valley">Stardew Valley</option>
-                  <option value="oneshot">OneShot</option>
-                  <option value="barotrauma">Barotrauma</option>
-                  <option value="nine-sols">Nine Sols</option>
-                  <option value="celeste">Celeste</option>
-                </select>
-                <div class="invalid-feedback">
-                  Выберите игру.
-                </div>
-              </div>
               <div class="form-check">
                 <input class="form-check-input" id="quick-agree" type="checkbox" name="agree" required>
                 <label class="form-check-label small" for="quick-agree">
@@ -391,9 +319,21 @@
               Закрыть
             </button>
             <button class="btn btn-primary" type="submit" form="quick-join-form">
-              Подготовить заявку
+              Сохранить профиль
             </button>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade guide-reader" id="guideModal" tabindex="-1" aria-labelledby="guideModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header align-items-start">
+            <div><p class="eyebrow mb-1">Руководство сообщества</p><h2 class="modal-title h4" id="guideModalTitle" tabindex="-1">Руководство</h2></div>
+            <button class="btn-close ms-auto" type="button" data-bs-dismiss="modal" aria-label="Закрыть руководство"></button>
+          </div>
+          <div class="modal-body" data-guide-body></div>
+          <div class="modal-footer"><span class="small text-body-secondary me-auto">Escape — закрыть и вернуться к ленте</span><button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">Закрыть</button></div>
         </div>
       </div>
     </div>
@@ -401,5 +341,7 @@
     </script>
     <script src="../js/main.js">
     </script>
+    <script src="../js/guides.js"></script>
+    <script src="../js/favorites.js"></script>
   </body>
 </html>

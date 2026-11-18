@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/theme.js"></script>
+    <script src="js/layout.js" defer></script>
+    <meta name="description" content="Общий профиль Game Community: имя, игровой ник, контакты и подборка избранных игр.">
+    <link rel="canonical" href="https://imbread300.github.io/game-community/profile.html">
+    <meta property="og:url" content="https://imbread300.github.io/game-community/profile.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Game Community">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:title" content="Заявка на участие — Game Community">
+    <meta property="og:description" content="Общий профиль Game Community: имя, игровой ник, контакты и подборка избранных игр.">
+    <meta property="og:image" content="https://imbread300.github.io/game-community/images/preview.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="735">
+    <meta property="og:image:height" content="733">
+    <meta property="og:image:alt" content="Game Community — Нико из OneShot">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Заявка на участие — Game Community">
+    <meta name="twitter:description" content="Общий профиль Game Community: имя, игровой ник, контакты и подборка избранных игр.">
+    <meta name="twitter:image" content="https://imbread300.github.io/game-community/images/preview.jpg">
+    <meta name="twitter:image:alt" content="Game Community — Нико из OneShot">
+    <title>
+      Заявка на участие — Game Community
+    </title>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/jpeg" href="images/preview.jpg">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body id="page-top" tabindex="-1">
+    <a class="visually-hidden-focusable skip-link" href="#main">
+      К основному содержимому
+    </a>
+    <header class="site-header" data-site-header></header>
+    <main class="container py-4 py-lg-5" id="main">
+      <nav aria-label="Хлебные крошки"><ol class="breadcrumb small"><li class="breadcrumb-item"><a href="index.html">Сообщества</a></li><li class="breadcrumb-item active" aria-current="page">Профиль</li></ol></nav>
+      <section class="community-panel p-4 mb-4" aria-labelledby="profile-title">
+        <div class="d-flex align-items-center gap-3"><img src="images/preview.jpg" class="profile-avatar" width="80" height="80" alt=""><div><p class="eyebrow mb-1">Game Community</p><h1 class="community-title mb-1" id="profile-title" data-profile-name>Ваш профиль</h1><p class="text-body-secondary mb-0" data-profile-nickname>Настройте профиль и выберите любимые игры.</p></div></div>
+        <p class="mt-3 mb-1" data-profile-bio></p><p class="small text-body-secondary mb-0" data-profile-email></p>
+        <p class="small text-body-secondary mt-3 mb-0">Профиль и избранное сохраняются в этом браузере.</p>
+      </section>
+      <div class="row g-4"><div class="col-12 col-xl-4"><section class="card"><div class="card-body"><h2 class="h5">Редактировать профиль</h2><form class="needs-validation" data-application-form novalidate>
+                <div class="alert alert-success" data-form-result role="status" tabindex="-1" hidden>
+                </div>
+                <div class="row g-3">
+                  <div class="col-12 col-md-6">
+                    <label class="form-label" for="join-name">
+                      Как к вам обращаться *
+                    </label>
+                    <input class="form-control" id="join-name" name="name" type="text" required autocomplete="name" maxlength="60" minlength="2" data-trim="true">
+                    <div class="invalid-feedback">
+                      Введите имя: от 2 до 60 символов.
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label class="form-label" for="join-email">
+                      E-mail *
+                    </label>
+                    <input class="form-control" id="join-email" name="email" type="email" required autocomplete="email" maxlength="254">
+                    <div class="invalid-feedback">
+                      Укажите корректный e-mail.
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label class="form-label" for="join-nickname">
+                      Игровой ник *
+                    </label>
+                    <div class="input-group has-validation">
+                      <span class="input-group-text" id="nickname-prefix">
+                        @
+                      </span>
+                      <input class="form-control" id="join-nickname" name="nickname" type="text" autocomplete="nickname" minlength="2" maxlength="32" data-trim="true" aria-describedby="nickname-prefix" required>
+                      <div class="invalid-feedback">
+                        Введите ник: от 2 до 32 символов.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label" for="join-comment">
+                      О себе
+                    </label>
+                    <textarea class="form-control" id="join-comment" name="comment" rows="4" maxlength="1000" placeholder="Любимые жанры, увлечения и несколько слов о себе…">
+                    </textarea>
+                    <p class="form-text mb-0">Необязательное описание профиля. Избранные игры выбираются отдельно — кнопкой со звездой.</p>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-check">
+                      <input class="form-check-input" id="join-agree" type="checkbox" name="agree" required>
+                      <label class="form-check-label small" for="join-agree">
+                        Согласен на обработку указанных данных *
+                      </label>
+                      <div class="invalid-feedback">
+                        Подтвердите согласие.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 d-flex flex-wrap gap-2">
+                    <button class="btn btn-primary" type="submit">
+                      Сохранить профиль
+                    </button>
+                    <button class="btn btn-outline-secondary" type="reset">
+                      Очистить
+                    </button>
+                  </div>
+                </div>
+              </form></div></section></div>
+      <div class="col-12 col-xl-8"><section aria-labelledby="profile-games-title"><h2 class="h4" id="profile-games-title">Мои игры</h2><p class="text-body-secondary">Избранные игры стоят первыми. Вы можете показать весь каталог и добавить любые игры в свою подборку.</p>
+      <div class="d-flex gap-2 mb-3" role="group" aria-label="Игры в профиле"><button class="btn btn-outline-primary" type="button" data-profile-games="all">Все игры</button><button class="btn btn-outline-primary" type="button" data-profile-games="favorites">Избранные</button></div>
+      <p class="small text-body-secondary" data-profile-game-count role="status"></p>
+<div class="row g-4" id="profile-games-grid">
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="card game-card h-100">
+              <a class="card-image-link" href="games/cs2.html" tabindex="-1" aria-hidden="true">
+                <img class="card-img-top" src="images/cs2-header.jpg" width="460" height="215" alt="" loading="lazy">
+              </a>
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex align-items-center justify-content-between gap-2 mb-3">
+                  <span class="badge badge-soft">
+                    Командная игра
+                  </span>
+                  <img class="game-icon" src="images/cs2-icon.jpg" width="36" height="36" alt="">
+                </div>
+                <h3 class="card-title h4">
+                  <a href="games/cs2.html">
+                    Counter-Strike 2
+                  </a>
+                </h3>
+                <p class="small text-primary">
+                  Тактический шутер
+                </p>
+                <p class="card-text text-body-secondary">
+                  Командные сражения, точная стрельба и тактика. Изучайте карты и взаимодействуйте с союзниками, чтобы добиться победы.
+                </p>
+                <div class="d-flex flex-wrap gap-2 mt-auto">
+                  <a class="btn btn-outline-primary" href="games/cs2.html">
+                    В сообщество →
+                  </a>
+                </div>
+              </div>
+              <div class="card-footer small text-body-secondary">
+                Valve
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="card game-card h-100">
+              <a class="card-image-link" href="games/stardew-valley.html" tabindex="-1" aria-hidden="true">
+                <img class="card-img-top" src="images/stardew-valley-header.jpg" width="460" height="215" alt="" loading="lazy">
+              </a>
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex align-items-center justify-content-between gap-2 mb-3">
+                  <span class="badge badge-soft">
+                    Уютное приключение
+                  </span>
+                  <img class="game-icon" src="images/stardew-valley-icon.jpg" width="36" height="36" alt="">
+                </div>
+                <h3 class="card-title h4">
+                  <a href="games/stardew-valley.html">
+                    Stardew Valley
+                  </a>
+                </h3>
+                <p class="small text-primary">
+                  Симулятор фермы
+                </p>
+                <p class="card-text text-body-secondary">
+                  Развивайте унаследованную ферму, знакомьтесь с жителями долины и выбирайте свой ритм: рыбалка, урожай или исследование шахт.
+                </p>
+                <div class="d-flex flex-wrap gap-2 mt-auto">
+                  <a class="btn btn-outline-primary" href="games/stardew-valley.html">
+                    В сообщество →
+                  </a>
+                </div>
+              </div>
+              <div class="card-footer small text-body-secondary">
+                ConcernedApe
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="card game-card h-100">
+              <a class="card-image-link" href="games/oneshot.html" tabindex="-1" aria-hidden="true">
+                <img class="card-img-top" src="images/oneshot-header.jpg" width="460" height="215" alt="" loading="lazy">
+              </a>
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex align-items-center justify-content-between gap-2 mb-3">
+                  <span class="badge badge-soft">
+                    Сюжетный мир
+                  </span>
+                  <img class="game-icon" src="images/oneshot-icon.jpg" width="36" height="36" alt="">
+                </div>
+                <h3 class="card-title h4">
+                  <a href="games/oneshot.html">
+                    OneShot
+                  </a>
+                </h3>
+                <p class="small text-primary">
+                  Приключение / головоломка
+                </p>
+                <p class="card-text text-body-secondary">
+                  Загадочный мир, необычные головоломки и путешествие Нико. Помогите вернуть погасшее солнце и познакомьтесь с историей без спойлеров.
+                </p>
+                <div class="d-flex flex-wrap gap-2 mt-auto">
+                  <a class="btn btn-outline-primary" href="games/oneshot.html">
+                    В сообщество →
+                  </a>
+                </div>
+              </div>
+              <div class="card-footer small text-body-secondary">
+                Future Cat LLC
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="card game-card h-100">
+              <a class="card-image-link" href="games/barotrauma.html" tabindex="-1" aria-hidden="true">
+                <img class="card-img-top" src="images/barotrauma-header.jpg" width="460" height="215" alt="" loading="lazy">
+              </a>
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex align-items-center justify-content-between gap-2 mb-3">
+                  <span class="badge badge-soft">
+                    Подводная экспедиция
+                  </span>
+                  <img class="game-icon" src="images/barotrauma-icon.jpg" width="36" height="36" alt="">
+                </div>
+                <h3 class="card-title h4">
+                  <a href="games/barotrauma.html">
+                    Barotrauma
+                  </a>
+                </h3>
+                <p class="small text-primary">
+                  Кооперативное выживание
+                </p>
+                <p class="card-text text-body-secondary">
+                  Станьте частью экипажа подлодки: выполняйте задания, устраняйте протечки и вместе преодолевайте опасности неизведанных глубин.
+                </p>
+                <div class="d-flex flex-wrap gap-2 mt-auto">
+                  <a class="btn btn-outline-primary" href="games/barotrauma.html">
+                    В сообщество →
+                  </a>
+                </div>
+              </div>
+              <div class="card-footer small text-body-secondary">
+                FakeFish, Undertow Games
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="card game-card h-100">
+              <a class="card-image-link" href="games/nine-sols.html" tabindex="-1" aria-hidden="true">
+                <img class="card-img-top" src="images/nine-sols-header.jpg" width="460" height="215" alt="" loading="lazy">
+              </a>
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex align-items-center justify-content-between gap-2 mb-3">
+                  <span class="badge badge-soft">
+                    Мир таопанка
+                  </span>
+                  <img class="game-icon" src="images/nine-sols-icon.jpg" width="36" height="36" alt="">
+                </div>
+                <h3 class="card-title h4">
+                  <a href="games/nine-sols.html">
+                    Nine Sols
+                  </a>
+                </h3>
+                <p class="small text-primary">
+                  Экшен / метроидвания
+                </p>
+                <p class="card-text text-body-secondary">
+                  Исследуйте мир таопанка вместе с И, осваивайте парирования и бросьте вызов девяти правителям древней цивилизации.
+                </p>
+                <div class="d-flex flex-wrap gap-2 mt-auto">
+                  <a class="btn btn-outline-primary" href="games/nine-sols.html">
+                    В сообщество →
+                  </a>
+                </div>
+              </div>
+              <div class="card-footer small text-body-secondary">
+                RedCandleGames
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="card game-card h-100">
+              <a class="card-image-link" href="games/celeste.html" tabindex="-1" aria-hidden="true">
+                <img class="card-img-top" src="images/celeste-header.jpg" width="460" height="215" alt="" loading="lazy">
+              </a>
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex align-items-center justify-content-between gap-2 mb-3">
+                  <span class="badge badge-soft">
+                    Путь к вершине
+                  </span>
+                  <img class="game-icon" src="images/celeste-icon.jpg" width="36" height="36" alt="">
+                </div>
+                <h3 class="card-title h4">
+                  <a href="games/celeste.html">
+                    Celeste
+                  </a>
+                </h3>
+                <p class="small text-primary">
+                  Платформер на точность
+                </p>
+                <p class="card-text text-body-secondary">
+                  Помогите Мэдлин подняться на гору Селеста: оттачивайте прыжки и рывки, ищите секреты и преодолевайте сложные испытания.
+                </p>
+                <div class="d-flex flex-wrap gap-2 mt-auto">
+                  <a class="btn btn-outline-primary" href="games/celeste.html">
+                    В сообщество →
+                  </a>
+                </div>
+              </div>
+              <div class="card-footer small text-body-secondary">
+                Maddy Makes Games Inc., Extremely OK Games, Ltd.
+              </div>
+            </article>
+          </div>
+        </div><p class="alert alert-info mt-3" data-profile-empty hidden>В подборке пока нет игр. Выберите «Все игры» и добавьте понравившиеся кнопкой со звездой.</p>
+      </section></div></div>
+    </main>
+    <footer class="site-footer py-4 mt-5" data-site-footer></footer>
+    <div class="page-actions" aria-label="Быстрые действия">
+      <a class="back-to-top" href="#page-top" aria-label="Вернуться к началу страницы">Наверх</a>
+    </div>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js">
+    </script>
+    <script src="js/main.js">
+    </script>
+    <script src="js/favorites.js"></script>
+    <script src="js/profile.js"></script>
+  </body>
+</html>

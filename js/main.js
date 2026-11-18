@@ -1,34 +1,30 @@
-// Фильтры ленты не затрагивают описание и характеристики игры.
+// Фильтры продолжают работать после перестановки избранных карточек.
 const contentFilters = document.querySelectorAll('[data-content-filter]');
 if (contentFilters.length) {
   const cards = document.querySelectorAll('[data-content-type]');
   const count = document.querySelector('#content-count');
   const empty = document.querySelector('#content-empty');
+  const applyContentFilter = () => {
+    const category = document.querySelector('[data-content-filter].active')?.dataset.contentFilter || 'all';
+    let visible = 0;
+    cards.forEach((card) => {
+      const matches = category === 'all' || (category === 'favorites' ? card.dataset.favorite === 'true' : card.dataset.contentType === category);
+      card.hidden = !matches;
+      if (matches) visible += 1;
+    });
+    count.textContent = `Материалов: ${visible}`;
+    empty.hidden = visible !== 0;
+  };
   contentFilters.forEach((button) => button.addEventListener('click', () => {
-    const category = button.dataset.contentFilter;
     contentFilters.forEach((filter) => {
       const active = filter === button;
       filter.classList.toggle('active', active);
       filter.setAttribute('aria-pressed', String(active));
     });
-    let visible = 0;
-    cards.forEach((card) => {
-      card.hidden = category !== 'all' && card.dataset.contentType !== category;
-      if (!card.hidden) visible += 1;
-    });
-    count.textContent = `Материалов: ${visible}`;
-    empty.hidden = visible !== 0;
+    applyContentFilter();
     document.querySelector('#game-feed')?.scrollIntoView({ block: 'start' });
   }));
-}
-
-// Выбор игры по ссылке из игрового центра. Допускаются только значения select.
-const fullGameSelect = document.querySelector('#join-game');
-if (fullGameSelect) {
-  const requested = new URLSearchParams(window.location.search).get('game');
-  if ([...fullGameSelect.options].some((option) => option.value === requested)) {
-    fullGameSelect.value = requested;
-  }
+  document.addEventListener('favoriteschange', applyContentFilter);
 }
 
 // Оригинальные диалоговые портреты загружаются локально, в том числе на страницах games/.
@@ -43,6 +39,7 @@ const nikoEmotions = {
 
 function showNikoFeedback(form, emotion, title, message) {
   const result = form.querySelector('[data-form-result]');
+  result.querySelectorAll('.niko-dialogue > a').forEach(link => link.remove());
   const state = nikoEmotions[emotion];
   const portrait = result.querySelector('[data-niko-portrait]');
   portrait.src = new URL(state.file, nikoImageBase).href;
@@ -56,7 +53,7 @@ function showNikoFeedback(form, emotion, title, message) {
   result.hidden = false;
 }
 
-// Проверка полей и подтверждение заполнения заявки.
+// Проверка полей и сохранение общего профиля.
 const forms = document.querySelectorAll('[data-application-form]');
 forms.forEach((form) => {
   const result = form.querySelector('[data-form-result]');
@@ -77,26 +74,21 @@ forms.forEach((form) => {
   dialogue.append(title, message);
   result.replaceChildren(portrait, dialogue);
   if (!form.closest('.modal')) {
-    showNikoFeedback(form, 'filling', 'Давайте знакомиться', 'Выберите сообщество и расскажите немного о себе.');
+    showNikoFeedback(form, 'filling', 'Давайте знакомиться', 'Расскажите о себе и сохраните профиль.');
   }
   const clearState = () => {
     form.classList.remove('was-validated');
     result.hidden = true;
     form.querySelectorAll('[data-trim]').forEach((field) => field.setCustomValidity(''));
-    showNikoFeedback(form, 'neutral', 'Начнём сначала', 'Форма очищена. Можно выбрать игру и заполнить заявку заново.');
+    showNikoFeedback(form, 'neutral', 'Начнём сначала', 'Форма очищена. Заполните данные профиля заново.');
   };
   form.addEventListener('reset', clearState);
   form.addEventListener('input', (event) => {
     if (event.target.matches('[data-trim]')) event.target.setCustomValidity('');
     // После ошибки сохраняем грустный портрет до следующей успешной проверки.
     if (result.dataset.emotion !== 'sad' && result.dataset.emotion !== 'filling') {
-      showNikoFeedback(form, 'filling', 'Заполняем заявку', 'Продолжайте заполнение, а затем нажмите «Подготовить заявку».');
+      showNikoFeedback(form, 'filling', 'Заполняем профиль', 'Продолжайте заполнение, а затем нажмите «Сохранить профиль».');
     }
-  });
-  form.elements.namedItem('game').addEventListener('change', (event) => {
-    const game = event.target;
-    if (!game.value || result.dataset.emotion === 'sad') return;
-    showNikoFeedback(form, 'filling', 'Отличный выбор!', `Сообщество «${game.selectedOptions[0].textContent.trim()}». Расскажите немного о себе, чтобы присоединиться.`);
   });
   form.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -113,33 +105,116 @@ forms.forEach((form) => {
       const invalidField = form.querySelector(':invalid');
       const label = form.querySelector(`label[for="${invalidField.id}"]`);
       const fieldName = label.textContent.replace('*', '').trim();
-      showNikoFeedback(form, 'sad', 'Попробуем ещё раз', `Проверьте поле «${fieldName}» и остальные отмеченные поля. Давайте исправим заявку вместе.`);
+      showNikoFeedback(form, 'sad', 'Попробуем ещё раз', `Проверьте поле «${fieldName}» и остальные отмеченные поля. Давайте исправим данные вместе.`);
       invalidField.focus({ preventScroll: true });
       result.scrollIntoView({ block: 'nearest' });
       return;
     }
     const name = form.elements.namedItem('name').value;
-    const game = form.elements.namedItem('game');
-    const title = game.selectedOptions[0].textContent.trim();
-    showNikoFeedback(form, 'happy', 'Получилось!', `${name}, заявка в сообщество «${title}» подготовлена.`);
+    let previous = {};
+    try { previous = JSON.parse(localStorage.getItem('game-community-profile')) || {}; } catch {}
+    const profile = {
+      name, email: form.elements.namedItem('email').value,
+      nickname: form.elements.namedItem('nickname')?.value || (typeof previous.nickname === 'string' ? previous.nickname : ''),
+      bio: form.elements.namedItem('comment')?.value.trim() ?? (typeof previous.bio === 'string' ? previous.bio : ''),
+    };
+    try { localStorage.setItem('game-community-profile', JSON.stringify(profile)); }
+    catch { showNikoFeedback(form, 'sad', 'Не удалось сохранить', 'Браузер не разрешает сохранять данные. Проверьте настройки хранилища.'); return; }
+    document.dispatchEvent(new Event('profilechange'));
+    showNikoFeedback(form, 'happy', 'Получилось!', `${name}, профиль сохранён.`);
+    const profileLink = document.createElement('a');
+    profileLink.className = 'btn btn-outline-primary btn-sm mt-2';
+    profileLink.href = new URL('../../profile.html', nikoImageBase).href;
+    profileLink.textContent = 'Открыть профиль';
+    result.querySelector('.niko-dialogue').append(profileLink);
     result.focus({ preventScroll: true });
     result.scrollIntoView({ block: 'nearest' });
   });
 });
 
-// Каждое открытие модального окна начинает новую заявку на выбранную игру.
+// Короткая форма создаёт общий профиль независимо от страницы игры.
 const joinModal = document.querySelector('#joinModal');
 if (joinModal) {
   joinModal.addEventListener('show.bs.modal', (event) => {
     const form = joinModal.querySelector('form');
     form.reset();
-    const selected = event.relatedTarget?.dataset.game;
-    const select = form.elements.namedItem('game');
-    if ([...select.options].some((option) => option.value === selected)) select.value = selected;
-    const gameTitle = select.value ? `Вы выбрали сообщество «${select.selectedOptions[0].textContent.trim()}». ` : '';
-    showNikoFeedback(form, 'filling', 'Давайте знакомиться', `${gameTitle}Укажите имя, e-mail и подтвердите согласие.`);
+    showNikoFeedback(form, 'filling', 'Давайте знакомиться', 'Укажите имя, e-mail и подтвердите согласие. Профиль общий для всех игр.');
   });
   joinModal.addEventListener('shown.bs.modal', () => {
     joinModal.querySelector('input')?.focus();
   });
 }
+
+// Рекомендации используют Bootstrap Carousel; управление паузой остаётся явным.
+const recommendations = document.querySelector('#recommendedGames');
+if (recommendations) {
+  const carousel = new bootstrap.Carousel(recommendations, {
+    interval: 6500, ride: false, pause: false, keyboard: true, touch: true,
+  });
+  const pauseButton = recommendations.querySelector('[data-carousel-pause]');
+  const slides = recommendations.querySelector('.carousel-inner');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let userPaused = false;
+  let hovered = false;
+  let modalOpen = false;
+  const updatePlayback = () => {
+    const paused = userPaused || hovered || modalOpen || reducedMotion.matches || document.hidden || recommendations.contains(document.activeElement);
+    if (paused) carousel.pause();
+    else carousel.cycle();
+    slides.setAttribute('aria-live', paused ? 'polite' : 'off');
+    pauseButton.hidden = reducedMotion.matches;
+    pauseButton.textContent = userPaused ? 'Включить смену' : 'Остановить смену';
+    pauseButton.setAttribute('aria-pressed', String(userPaused));
+  };
+  pauseButton.addEventListener('click', () => { userPaused = !userPaused; updatePlayback(); });
+  recommendations.addEventListener('mouseenter', () => { hovered = true; updatePlayback(); });
+  recommendations.addEventListener('mouseleave', () => { hovered = false; updatePlayback(); });
+  recommendations.addEventListener('focusin', updatePlayback);
+  recommendations.addEventListener('focusout', () => setTimeout(updatePlayback, 0));
+  document.addEventListener('visibilitychange', updatePlayback);
+  reducedMotion.addEventListener('change', updatePlayback);
+  joinModal?.addEventListener('show.bs.modal', () => { modalOpen = true; updatePlayback(); });
+  joinModal?.addEventListener('hidden.bs.modal', () => { modalOpen = false; updatePlayback(); });
+  updatePlayback();
+}
+
+// После создания профиля повторные приглашения ведут в существующий профиль.
+(() => {
+  const profileUrl = new URL('../../profile.html', nikoImageBase).href;
+  const entries = new Map();
+  const hasProfile = () => {
+    try {
+      const profile = JSON.parse(localStorage.getItem('game-community-profile'));
+      return Boolean(profile && typeof profile.name === 'string' && profile.name && typeof profile.email === 'string' && profile.email);
+    } catch { return false; }
+  };
+  const updateEntries = () => {
+    document.querySelectorAll('a, button').forEach(node => {
+      if (node.textContent.trim() === 'Создать профиль' && !entries.has(node)) {
+        entries.set(node, { text: node.textContent, href: node.getAttribute('href'), toggle: node.getAttribute('data-bs-toggle'), target: node.getAttribute('data-bs-target') });
+        node.dataset.profileEntry = 'true';
+      }
+    });
+    const created = hasProfile();
+    entries.forEach((original, node) => {
+      node.textContent = created ? 'В профиль' : original.text;
+      for (const [attr, value] of [['href', created && node.tagName === 'A' ? profileUrl : original.href], ['data-bs-toggle', created ? null : original.toggle], ['data-bs-target', created ? null : original.target]]) {
+        if (value === null) node.removeAttribute(attr);
+        else node.setAttribute(attr, value);
+      }
+    });
+  };
+  document.addEventListener('click', event => {
+    const entry = event.target.closest('[data-profile-entry]');
+    if (!entry || !hasProfile()) return;
+    // Обычные ссылки сохраняют открытие в новой вкладке; кнопки переходят сюда без модального окна.
+    if (entry.tagName === 'A') return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    location.assign(profileUrl);
+  }, true);
+  document.addEventListener('profilechange', updateEntries);
+  document.addEventListener('layoutready', updateEntries);
+  window.addEventListener('storage', event => { if (event.key === 'game-community-profile' || event.key === null) updateEntries(); });
+  updateEntries();
+})();
