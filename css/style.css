@@ -244,3 +244,145 @@ body { --bs-tertiary-bg: #211a31; --bs-emphasis-color: #eee6f6; }
 
 .about-game-card .text-body-secondary { color: #f2edf8 !important; line-height: 1.75; }
 .about-game-card h3 a { color: #ffe2a0; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+
+/* Рекомендации на главной: обложка, описание и переключение игр. */
+.recommendation-carousel { scroll-margin-top: 110px; }
+.recommendation-card { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); }
+.recommendation-card .card-image-link { display: flex; min-width: 0; }
+.recommendation-card .card-img-top { width: 100%; height: 100%; min-height: 340px; aspect-ratio: auto; object-fit: cover; }
+.recommendation-card .card-body { min-width: 0; min-height: 340px; padding: 28px; background: linear-gradient(135deg, #352747, #201a30); }
+.recommendation-card .card-footer { grid-column: 1 / -1; }
+.recommendation-controls .carousel-indicators { position: static; margin: 0; gap: 8px; }
+.recommendation-controls .carousel-indicators button { width: 24px; height: 7px; margin: 0; border: 0; border-radius: 3px; background-color: var(--accent); }
+.recommendation-controls .recommendation-arrow { position: static; width: 38px; height: 38px; flex-shrink: 0; opacity: 1; background: #352747; border: 1px solid #806395; border-radius: 4px; }
+.recommendation-arrow .carousel-control-prev-icon, .recommendation-arrow .carousel-control-next-icon { width: 18px; height: 18px; }
+.recommendation-arrow:hover { background: #514164; }
+@media (max-width: 767.98px) {
+  .recommendation-card { grid-template-columns: minmax(0, 1fr); }
+  .recommendation-card .card-img-top { height: auto; min-height: 0; aspect-ratio: 460 / 215; }
+  .recommendation-card .card-body { min-height: 340px; padding: 20px; }
+  .recommendation-controls { gap: 10px !important; }
+  .recommendation-controls .carousel-indicators { gap: 6px; }
+  .recommendation-controls .carousel-indicators button { width: 18px; }
+}
+
+.recommendation-carousel .recommendation-controls .carousel-indicators [data-bs-target] { background-color: var(--accent); }
+.recommendation-carousel .carousel-control-prev-icon, .recommendation-carousel .carousel-control-next-icon { filter: none; }
+
+/* Светлая палитра Stardew Valley: кремовая бумага, зелень и золотистые акценты. */
+:root[data-bs-theme="light"] {
+  --accent: #34623c;
+  --page-bg: #fff6e3;
+  --panel-bg: #fffdf5;
+  --header-bg: #f0e5c8;
+}
+[data-bs-theme="light"] body {
+  --bs-body-color: #2f3b2c;
+  --bs-body-bg: var(--page-bg);
+  --bs-secondary-color: #58634d;
+  --bs-emphasis-color: #233f2a;
+  --bs-tertiary-bg: #f1ead5;
+  --bs-border-color: #c9c49f;
+  --bs-primary-rgb: 52, 98, 60;
+  --bs-link-color: #2c613a;
+  --bs-link-color-rgb: 44, 97, 58;
+  --bs-link-hover-color: #194724;
+  --bs-link-hover-color-rgb: 25, 71, 36;
+  background: radial-gradient(ellipse at 10% 5%, #deedcd 0, transparent 55%), radial-gradient(ellipse at 95% 0, #f7d47a40 0, transparent 40%), var(--page-bg);
+}
+[data-bs-theme="light"] .site-header .navbar { --bs-navbar-color: #46563c; --bs-navbar-hover-color: #244a2d; }
+[data-bs-theme="light"] .brand-name, [data-bs-theme="light"] .hub-link, [data-bs-theme="light"] .card-title a, [data-bs-theme="light"] .site-footer .footer-logo { color: #2f3b2c; }
+[data-bs-theme="light"] .hub-link small, [data-bs-theme="light"] .site-footer a, [data-bs-theme="light"] .game-switch-link { color: #536249; }
+[data-bs-theme="light"] .brand-mark, [data-bs-theme="light"] .footer-preview { border-color: #a6ad82; }
+[data-bs-theme="light"] .card { --bs-card-bg: #fffdf5; --bs-card-cap-bg: #f3ecd8; --bs-card-border-color: #c9c49f; --bs-card-title-color: #2f3b2c; }
+[data-bs-theme="light"] .badge-soft { color: #385b30; background: #e5edce; border-color: #adb986; }
+[data-bs-theme="light"] .btn-primary { --bs-btn-color: #3c321b; --bs-btn-bg: #efc46e; --bs-btn-border-color: #c39740; --bs-btn-hover-color: #30260f; --bs-btn-hover-bg: #f6d38d; --bs-btn-hover-border-color: #a67b29; --bs-btn-active-color: #30260f; --bs-btn-active-bg: #dfaf50; --bs-btn-active-border-color: #a67b29; --bs-btn-focus-shadow-rgb: 166, 123, 41; }
+[data-bs-theme="light"] .btn-outline-primary { --bs-btn-color: #34623c; --bs-btn-border-color: #759467; --bs-btn-hover-color: #fffdf5; --bs-btn-hover-bg: #34623c; --bs-btn-hover-border-color: #34623c; --bs-btn-active-color: #fffdf5; --bs-btn-active-bg: #285231; --bs-btn-active-border-color: #285231; --bs-btn-focus-shadow-rgb: 52, 98, 60; }
+[data-bs-theme="light"] .btn-outline-secondary { --bs-btn-color: #536249; --bs-btn-border-color: #9aab83; --bs-btn-hover-color: #233f2a; --bs-btn-hover-bg: #e1e9c9; --bs-btn-hover-border-color: #759467; --bs-btn-active-color: #233f2a; --bs-btn-active-bg: #d1deaf; --bs-btn-active-border-color: #759467; --bs-btn-focus-shadow-rgb: 117, 148, 103; }
+[data-bs-theme="light"] .dropdown-menu { --bs-dropdown-bg: #fffdf5; --bs-dropdown-link-color: #35482e; --bs-dropdown-link-hover-bg: #e8efda; --bs-dropdown-link-hover-color: #25412a; --bs-dropdown-link-active-bg: #d5e4bb; --bs-dropdown-link-active-color: #24482b; --bs-dropdown-border-color: #b8bd96; }
+[data-bs-theme="light"] .alert-info { --bs-alert-color: #35513a; --bs-alert-bg: #e8efd8; --bs-alert-border-color: #afc293; }
+[data-bs-theme="light"] .alert-success { --bs-alert-color: #285432; --bs-alert-bg: #deedd6; --bs-alert-border-color: #9bbb8c; }
+[data-bs-theme="light"] .alert-secondary { --bs-alert-color: #58543d; --bs-alert-bg: #f1ecd9; --bs-alert-border-color: #c9bd92; }
+[data-bs-theme="light"] .alert-danger { --bs-alert-color: #822e2b; --bs-alert-bg: #fbe6dc; --bs-alert-border-color: #dca899; }
+[data-bs-theme="light"] .form-control, [data-bs-theme="light"] .form-select { color: #2f3b2c; background-color: #fffef9; border-color: #acb58d; }
+[data-bs-theme="light"] .form-control::placeholder { color: #70765e; }
+[data-bs-theme="light"] .form-control:focus, [data-bs-theme="light"] .form-select:focus { color: #2f3b2c; background-color: #fffef9; border-color: #668a50; box-shadow: 0 0 0 .2rem #668a5026; }
+[data-bs-theme="light"] .form-select option { color: #2f3b2c; background: #fffef9; }
+[data-bs-theme="light"] .form-check-input { background-color: #fffef9; border-color: #809b6a; }
+[data-bs-theme="light"] .form-check-input:checked { background-color: #527d45; border-color: #527d45; }
+[data-bs-theme="light"] .input-group-text { color: #42573a; background: #e7edcf; border-color: #acb58d; }
+[data-bs-theme="light"] .invalid-feedback { color: #a0332b; }
+[data-bs-theme="light"] .modal { --bs-modal-bg: #fffaf0; --bs-modal-border-color: #aab58b; --bs-modal-header-border-color: #c9c49f; --bs-modal-footer-border-color: #c9c49f; }
+[data-bs-theme="light"] .accordion { --bs-accordion-bg: #fffdf5; --bs-accordion-color: #46563c; --bs-accordion-border-color: #c9c49f; --bs-accordion-btn-color: #2f3b2c; --bs-accordion-active-bg: #e5edce; --bs-accordion-active-color: #2c5432; --bs-accordion-btn-focus-box-shadow: 0 0 0 .2rem #668a5026; }
+[data-bs-theme="light"] .table { --bs-table-bg: #fffdf5; --bs-table-color: #46563c; --bs-table-border-color: #c9c49f; --bs-table-striped-bg: #eef1df; --bs-table-striped-color: #2f3b2c; }
+[data-bs-theme="light"] .breadcrumb { --bs-breadcrumb-divider-color: #748161; --bs-breadcrumb-item-active-color: #58634d; }
+[data-bs-theme="light"] .content-filter { color: #58634d; }
+[data-bs-theme="light"] .content-filter.active, [data-bs-theme="light"] .content-filter:hover, [data-bs-theme="light"] .game-switch-link.current { color: var(--accent); border-bottom-color: var(--accent); }
+[data-bs-theme="light"] .section-heading, [data-bs-theme="light"] .feed-heading { border-bottom-color: #a4b785; }
+[data-bs-theme="light"] .back-to-top { color: #34623c; background: #e5edce; border-color: #8da672; }
+[data-bs-theme="light"] .back-to-top:hover { color: #24482b; background: #d5e4bb; }
+[data-bs-theme="light"] .game-card:hover { border-color: #759467; }
+[data-bs-theme="light"] .game-page { background: var(--page-bg); }
+[data-bs-theme="light"] .game-page::before { background-image: linear-gradient(180deg, #fff6e340 0%, #fff6e3bf 55%, #fff6e3 100%), var(--game-background); }
+[data-bs-theme="light"] .recommendation-card .card-body { background: linear-gradient(135deg, #e7edcf, #fff9e9); }
+[data-bs-theme="light"] .recommendation-controls .recommendation-arrow { background: #e5edce; border-color: #8da672; }
+[data-bs-theme="light"] .recommendation-arrow:hover { background: #d5e4bb; }
+[data-bs-theme="light"] .recommendation-carousel .carousel-control-prev-icon, [data-bs-theme="light"] .recommendation-carousel .carousel-control-next-icon { filter: invert(1); }
+[data-bs-theme="light"] .about-game-card { text-shadow: 0 1px 2px #fffdf5; }
+[data-bs-theme="light"] .about-game-card::before { background-image: linear-gradient(180deg, #fffaf0f5 0%, #fffaf0e6 60%, #fffaf066 100%), var(--about-game-cover); }
+[data-bs-theme="light"] .about-game-card .text-body-secondary { color: #2f3b2c !important; }
+[data-bs-theme="light"] .about-game-card h3 a { color: #2c613a; }
+.theme-toggle { min-height: 38px; white-space: nowrap; }
+@media (min-width: 992px) and (max-width: 1199.98px) { .theme-toggle [data-theme-label] { display: none; } }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .4s; }
+@media (prefers-reduced-motion: no-preference) {
+  .theme-transition *, .theme-transition *::before, .theme-transition *::after { transition: background-color .35s ease, color .35s ease, border-color .35s ease; }
+}
+
+[data-bs-theme="light"] .site-footer .footer-join { color: var(--bs-btn-color); }
+[data-bs-theme="light"] .site-footer .footer-join:hover { color: var(--bs-btn-hover-color); }
+
+/* Карточки руководств и окно чтения поверх игровой ленты. */
+.guide-cover-button { display: block; position: relative; padding: 0; border: 0; width: 100%; text-align: left; background: var(--panel-bg); color: var(--accent); overflow: hidden; }
+.guide-cover-button img { transition: transform .2s ease; }
+.guide-cover-button:hover img { transform: scale(1.03); }
+.guide-cover-label { position: absolute; left: 16px; bottom: 16px; background: var(--header-bg); border: 1px solid var(--accent); padding: 5px 12px; border-radius: 3px; }
+.guide-reader .modal-body { padding: 0; }
+.guide-reader-hero { border-bottom: 1px solid var(--bs-border-color); }
+.guide-reader-cover { display: block; width: 100%; height: 210px; object-fit: cover; }
+.guide-reader-layout { display: grid; grid-template-columns: minmax(0, 1fr) 250px; grid-template-areas: 'content toc'; align-items: start; gap: 32px; padding: 28px; }
+.guide-reader-content { grid-area: content; min-width: 0; }
+.guide-reader-section { padding-block: 8px 28px; line-height: 1.85; }
+.guide-reader-section:last-child { padding-bottom: 0; }
+.guide-reader-toc { grid-area: toc; position: sticky; top: 20px; padding: 18px; border: 1px solid var(--bs-border-color); border-radius: 4px; background: var(--panel-bg); }
+.guide-toc-link { display: block; width: 100%; margin-top: 8px; padding: 9px 10px; color: var(--bs-secondary-color); background: transparent; border: 0; border-left: 2px solid transparent; text-align: left; font-size: 14px; overflow-wrap: anywhere; }
+.guide-toc-link:hover, .guide-toc-link.active { color: var(--accent); border-left-color: var(--accent); background: color-mix(in srgb, var(--accent) 9%, transparent); }
+@media (max-width: 767.98px) {
+  .guide-reader-layout { grid-template-columns: minmax(0, 1fr); grid-template-areas: 'toc' 'content'; gap: 20px; padding: 20px; }
+  .guide-reader-toc { position: static; }
+  .guide-reader-cover { height: auto; aspect-ratio: 460 / 215; }
+  .guide-reader .modal-title { font-size: 20px; }
+}
+@media (prefers-reduced-motion: reduce) { .guide-cover-button img { transition: none; } }
+
+.guide-card .guide-cover-button { display: flex; align-items: center; gap: 20px; padding: 20px; }
+.guide-avatar { display: block; width: 96px; height: 96px; flex-shrink: 0; object-fit: contain; border-radius: 4px; background: var(--header-bg); }
+.guide-card .guide-cover-label { position: static; }
+.guide-reader-hero { display: flex; align-items: center; gap: 24px; padding: 24px; }
+.guide-reader .guide-reader-cover { width: 128px; height: 128px; flex-shrink: 0; object-fit: contain; border-radius: 4px; background: var(--header-bg); }
+.guide-reader-hero > .p-4 { padding: 0 !important; }
+.feature-light { display: none; }
+[data-bs-theme="light"] .feature-dark { display: none; }
+[data-bs-theme="light"] .feature-light { display: block; }
+@media (max-width: 575.98px) {
+  .guide-reader-hero { flex-direction: column; align-items: flex-start; padding: 20px; gap: 16px; }
+}
+
+.favorite-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 7px; }
+.favorite-toggle.is-favorite { color: var(--accent); border-color: var(--accent); background-color: color-mix(in srgb, var(--accent) 12%, transparent); }
+.favorite-toggle.is-favorite svg { fill: currentColor; }
+.favorite-content-tools { display: flex; justify-content: flex-start; }
+
+[data-site-header] { min-height: 90px; }
+
+.profile-avatar { width: 80px; height: 80px; object-fit: cover; border-radius: 12px; border: 1px solid var(--bs-border-color); }

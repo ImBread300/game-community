@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/theme.js"></script>
+    <script src="js/layout.js" defer></script>
     <meta name="description" content="Game Community — сообщества CS2, Stardew Valley, OneShot, Barotrauma, Nine Sols и Celeste. Выберите игру и найдите своих людей.">
     <link rel="canonical" href="https://imbread300.github.io/game-community/">
     <meta property="og:url" content="https://imbread300.github.io/game-community/">
@@ -32,38 +34,7 @@
     <a class="visually-hidden-focusable skip-link" href="#main">
       К основному содержимому
     </a>
-    <header class="site-header">
-      <nav class="navbar navbar-expand-lg py-3" aria-label="Основная навигация">
-        <div class="container">
-          <a class="navbar-brand d-flex align-items-center gap-3" href="index.html">
-            <img class="brand-mark" src="images/preview.jpg" width="45" height="45" alt="">
-            <span class="brand-name">GAME COMMUNITY</span>
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Открыть или закрыть меню"><span class="navbar-toggler-icon"></span></button>
-          <div class="collapse navbar-collapse" id="mainNav">
-            <ul class="navbar-nav ms-lg-3 gap-lg-1 mt-3 mt-lg-0">
-              <li class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">Сообщества</a></li>
-              <li class="nav-item"><a class="nav-link" href="catalog.html">Игры</a></li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Игровые центры</a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="games/cs2.html">Counter-Strike 2</a></li>
-                  <li><a class="dropdown-item" href="games/stardew-valley.html">Stardew Valley</a></li>
-                  <li><a class="dropdown-item" href="games/oneshot.html">OneShot</a></li>
-                  <li><a class="dropdown-item" href="games/barotrauma.html">Barotrauma</a></li>
-                  <li><a class="dropdown-item" href="games/nine-sols.html">Nine Sols</a></li>
-                  <li><a class="dropdown-item" href="games/celeste.html">Celeste</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="product.html">В центре внимания: CS2</a></li>
-                </ul>
-              </li>
-              <li class="nav-item"><a class="nav-link" href="about.html">О сайте</a></li>
-            </ul>
-            <a class="btn btn-primary ms-lg-auto mt-3 mt-lg-0 site-join-button" href="order.html">Присоединиться</a>
-          </div>
-        </div>
-      </nav>
-    </header>
+    <header class="site-header" data-site-header></header>
     <main class="container py-4 py-lg-5" id="main">
       <section class="mb-4" aria-labelledby="home-title">
         <p class="eyebrow">
@@ -75,6 +46,242 @@
         <p class="intro">
           Игры, истории и творчество. Всё начинается с общего интереса.
         </p>
+        <div id="recommendedGames" class="carousel slide recommendation-carousel" role="region" aria-roledescription="карусель" aria-label="Рекомендуемые игры" tabindex="0">
+            <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+              <h3 class="h6 mb-0">Рекомендуемые игры</h3>
+              <button class="btn btn-outline-secondary btn-sm" type="button" data-carousel-pause aria-pressed="false">Остановить смену</button>
+            </div>
+            <div class="carousel-inner" aria-live="off">
+              <div class="carousel-item active" role="group" aria-roledescription="слайд" aria-label="1 из 6: Counter-Strike 2">
+                <article class="card recommendation-card">
+              <a class="card-image-link" href="games/cs2.html" tabindex="-1" aria-hidden="true">
+                <img class="card-img-top" src="images/cs2-header.jpg" width="460" height="215" alt="">
+              </a>
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex align-items-center justify-content-between gap-2 mb-3">
+                  <span class="badge badge-soft">
+                    Командная игра
+                  </span>
+                  <img class="game-icon" src="images/cs2-icon.jpg" width="36" height="36" alt="">
+                </div>
+                <h3 class="card-title h4">
+                  <a href="games/cs2.html">
+                    Counter-Strike 2
+                  </a>
+                </h3>
+                <p class="small text-primary">
+                  Тактический шутер
+                </p>
+                <p class="card-text text-body-secondary">
+                  Командные сражения, точная стрельба и тактика. Изучайте карты и взаимодействуйте с союзниками, чтобы добиться победы.
+                </p>
+                <div class="d-flex flex-wrap gap-2 mt-auto">
+                  <a class="btn btn-outline-primary" href="games/cs2.html">
+                    В сообщество →
+                  </a>
+                  <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#joinModal">
+                    Создать профиль
+                  </button>
+                </div>
+              </div>
+              <div class="card-footer small text-body-secondary">
+                Valve
+              </div>
+            </article>
+              </div>
+              <div class="carousel-item" role="group" aria-roledescription="слайд" aria-label="2 из 6: Stardew Valley">
+                <article class="card recommendation-card">
+              <a class="card-image-link" href="games/stardew-valley.html" tabindex="-1" aria-hidden="true">
+                <img class="card-img-top" src="images/stardew-valley-header.jpg" width="460" height="215" alt="">
+              </a>
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex align-items-center justify-content-between gap-2 mb-3">
+                  <span class="badge badge-soft">
+                    Уютное приключение
+                  </span>
+                  <img class="game-icon" src="images/stardew-valley-icon.jpg" width="36" height="36" alt="">
+                </div>
+                <h3 class="card-title h4">
+                  <a href="games/stardew-valley.html">
+                    Stardew Valley
+                  </a>
+                </h3>
+                <p class="small text-primary">
+                  Симулятор фермы
+                </p>
+                <p class="card-text text-body-secondary">
+                  Развивайте унаследованную ферму, знакомьтесь с жителями долины и выбирайте свой ритм: рыбалка, урожай или исследование шахт.
+                </p>
+                <div class="d-flex flex-wrap gap-2 mt-auto">
+                  <a class="btn btn-outline-primary" href="games/stardew-valley.html">
+                    В сообщество →
+                  </a>
+                  <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#joinModal">
+                    Создать профиль
+                  </button>
+                </div>
+              </div>
+              <div class="card-footer small text-body-secondary">
+                ConcernedApe
+              </div>
+            </article>
+              </div>
+              <div class="carousel-item" role="group" aria-roledescription="слайд" aria-label="3 из 6: OneShot">
+                <article class="card recommendation-card">
+              <a class="card-image-link" href="games/oneshot.html" tabindex="-1" aria-hidden="true">
+                <img class="card-img-top" src="images/oneshot-header.jpg" width="460" height="215" alt="">
+              </a>
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex align-items-center justify-content-between gap-2 mb-3">
+                  <span class="badge badge-soft">
+                    Сюжетный мир
+                  </span>
+                  <img class="game-icon" src="images/oneshot-icon.jpg" width="36" height="36" alt="">
+                </div>
+                <h3 class="card-title h4">
+                  <a href="games/oneshot.html">
+                    OneShot
+                  </a>
+                </h3>
+                <p class="small text-primary">
+                  Приключение / головоломка
+                </p>
+                <p class="card-text text-body-secondary">
+                  Загадочный мир, необычные головоломки и путешествие Нико. Помогите вернуть погасшее солнце и познакомьтесь с историей без спойлеров.
+                </p>
+                <div class="d-flex flex-wrap gap-2 mt-auto">
+                  <a class="btn btn-outline-primary" href="games/oneshot.html">
+                    В сообщество →
+                  </a>
+                  <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#joinModal">
+                    Создать профиль
+                  </button>
+                </div>
+              </div>
+              <div class="card-footer small text-body-secondary">
+                Future Cat LLC
+              </div>
+            </article>
+              </div>
+              <div class="carousel-item" role="group" aria-roledescription="слайд" aria-label="4 из 6: Barotrauma">
+                <article class="card recommendation-card">
+              <a class="card-image-link" href="games/barotrauma.html" tabindex="-1" aria-hidden="true">
+                <img class="card-img-top" src="images/barotrauma-header.jpg" width="460" height="215" alt="">
+              </a>
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex align-items-center justify-content-between gap-2 mb-3">
+                  <span class="badge badge-soft">
+                    Подводная экспедиция
+                  </span>
+                  <img class="game-icon" src="images/barotrauma-icon.jpg" width="36" height="36" alt="">
+                </div>
+                <h3 class="card-title h4">
+                  <a href="games/barotrauma.html">
+                    Barotrauma
+                  </a>
+                </h3>
+                <p class="small text-primary">
+                  Кооперативное выживание
+                </p>
+                <p class="card-text text-body-secondary">
+                  Станьте частью экипажа подлодки: выполняйте задания, устраняйте протечки и вместе преодолевайте опасности неизведанных глубин.
+                </p>
+                <div class="d-flex flex-wrap gap-2 mt-auto">
+                  <a class="btn btn-outline-primary" href="games/barotrauma.html">
+                    В сообщество →
+                  </a>
+                  <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#joinModal">
+                    Создать профиль
+                  </button>
+                </div>
+              </div>
+              <div class="card-footer small text-body-secondary">
+                FakeFish, Undertow Games
+              </div>
+            </article>
+              </div>
+              <div class="carousel-item" role="group" aria-roledescription="слайд" aria-label="5 из 6: Nine Sols">
+                <article class="card recommendation-card">
+              <a class="card-image-link" href="games/nine-sols.html" tabindex="-1" aria-hidden="true">
+                <img class="card-img-top" src="images/nine-sols-header.jpg" width="460" height="215" alt="">
+              </a>
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex align-items-center justify-content-between gap-2 mb-3">
+                  <span class="badge badge-soft">
+                    Мир таопанка
+                  </span>
+                  <img class="game-icon" src="images/nine-sols-icon.jpg" width="36" height="36" alt="">
+                </div>
+                <h3 class="card-title h4">
+                  <a href="games/nine-sols.html">
+                    Nine Sols
+                  </a>
+                </h3>
+                <p class="small text-primary">
+                  Экшен / метроидвания
+                </p>
+                <p class="card-text text-body-secondary">
+                  Исследуйте мир таопанка вместе с И, осваивайте парирования и бросьте вызов девяти правителям древней цивилизации.
+                </p>
+                <div class="d-flex flex-wrap gap-2 mt-auto">
+                  <a class="btn btn-outline-primary" href="games/nine-sols.html">
+                    В сообщество →
+                  </a>
+                  <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#joinModal">
+                    Создать профиль
+                  </button>
+                </div>
+              </div>
+              <div class="card-footer small text-body-secondary">
+                RedCandleGames
+              </div>
+            </article>
+              </div>
+              <div class="carousel-item" role="group" aria-roledescription="слайд" aria-label="6 из 6: Celeste">
+                <article class="card recommendation-card">
+              <a class="card-image-link" href="games/celeste.html" tabindex="-1" aria-hidden="true">
+                <img class="card-img-top" src="images/celeste-header.jpg" width="460" height="215" alt="">
+              </a>
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex align-items-center justify-content-between gap-2 mb-3">
+                  <span class="badge badge-soft">
+                    Путь к вершине
+                  </span>
+                  <img class="game-icon" src="images/celeste-icon.jpg" width="36" height="36" alt="">
+                </div>
+                <h3 class="card-title h4">
+                  <a href="games/celeste.html">
+                    Celeste
+                  </a>
+                </h3>
+                <p class="small text-primary">
+                  Платформер на точность
+                </p>
+                <p class="card-text text-body-secondary">
+                  Помогите Мэдлин подняться на гору Селеста: оттачивайте прыжки и рывки, ищите секреты и преодолевайте сложные испытания.
+                </p>
+                <div class="d-flex flex-wrap gap-2 mt-auto">
+                  <a class="btn btn-outline-primary" href="games/celeste.html">
+                    В сообщество →
+                  </a>
+                  <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#joinModal">
+                    Создать профиль
+                  </button>
+                </div>
+              </div>
+              <div class="card-footer small text-body-secondary">
+                Maddy Makes Games Inc., Extremely OK Games, Ltd.
+              </div>
+            </article>
+              </div>
+            </div>
+            <div class="recommendation-controls d-flex align-items-center justify-content-center gap-3 mt-3">
+              <button class="carousel-control-prev recommendation-arrow" type="button" data-bs-target="#recommendedGames" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Предыдущая игра</span></button>
+              <div class="carousel-indicators"><button type="button" data-bs-target="#recommendedGames" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Показать Counter-Strike 2"></button><button type="button" data-bs-target="#recommendedGames" data-bs-slide-to="1" aria-label="Показать Stardew Valley"></button><button type="button" data-bs-target="#recommendedGames" data-bs-slide-to="2" aria-label="Показать OneShot"></button><button type="button" data-bs-target="#recommendedGames" data-bs-slide-to="3" aria-label="Показать Barotrauma"></button><button type="button" data-bs-target="#recommendedGames" data-bs-slide-to="4" aria-label="Показать Nine Sols"></button><button type="button" data-bs-target="#recommendedGames" data-bs-slide-to="5" aria-label="Показать Celeste"></button></div>
+              <button class="carousel-control-next recommendation-arrow" type="button" data-bs-target="#recommendedGames" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Следующая игра</span></button>
+            </div>
+          </div>
+
         <div class="row g-3 mt-2">
           <div class="col-12 col-lg-8">
             <div class="community-panel p-4 h-100">
@@ -89,7 +296,7 @@
                   <a class="btn btn-primary mt-2" href="catalog.html">
                     Найти своё сообщество
                   </a>
-                  <a class="d-block small mt-3" href="order.html">
+                  <a class="d-block small mt-3" href="profile.html">
                     Вступить в игровое сообщество →
                   </a>
                 </div>
@@ -204,8 +411,8 @@
           </a>
         </div>
         <div class="row g-3">
-          <div class="col-12">
-            <article class="card game-card h-100 featured-card">
+          <div class="col-12 col-md-6">
+            <article class="card game-card h-100">
               <a class="card-image-link" href="games/cs2.html" tabindex="-1" aria-hidden="true">
                 <img class="card-img-top" src="images/cs2-header.jpg" width="460" height="215" alt="" loading="lazy">
               </a>
@@ -231,8 +438,8 @@
                   <a class="btn btn-outline-primary" href="games/cs2.html">
                     В сообщество →
                   </a>
-                  <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#joinModal" data-game="cs2">
-                    Присоединиться
+                  <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#joinModal">
+                    Создать профиль
                   </button>
                 </div>
               </div>
@@ -241,6 +448,7 @@
               </div>
             </article>
           </div>
+
           <div class="col-12 col-md-6">
             <article class="card game-card h-100">
               <a class="card-image-link" href="games/stardew-valley.html" tabindex="-1" aria-hidden="true">
@@ -268,8 +476,8 @@
                   <a class="btn btn-outline-primary" href="games/stardew-valley.html">
                     В сообщество →
                   </a>
-                  <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#joinModal" data-game="stardew-valley">
-                    Присоединиться
+                  <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#joinModal">
+                    Создать профиль
                   </button>
                 </div>
               </div>
@@ -305,8 +513,8 @@
                   <a class="btn btn-outline-primary" href="games/oneshot.html">
                     В сообщество →
                   </a>
-                  <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#joinModal" data-game="oneshot">
-                    Присоединиться
+                  <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#joinModal">
+                    Создать профиль
                   </button>
                 </div>
               </div>
@@ -342,8 +550,8 @@
                   <a class="btn btn-outline-primary" href="games/barotrauma.html">
                     В сообщество →
                   </a>
-                  <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#joinModal" data-game="barotrauma">
-                    Присоединиться
+                  <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#joinModal">
+                    Создать профиль
                   </button>
                 </div>
               </div>
@@ -379,8 +587,8 @@
                   <a class="btn btn-outline-primary" href="games/nine-sols.html">
                     В сообщество →
                   </a>
-                  <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#joinModal" data-game="nine-sols">
-                    Присоединиться
+                  <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#joinModal">
+                    Создать профиль
                   </button>
                 </div>
               </div>
@@ -416,8 +624,8 @@
                   <a class="btn btn-outline-primary" href="games/celeste.html">
                     В сообщество →
                   </a>
-                  <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#joinModal" data-game="celeste">
-                    Присоединиться
+                  <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#joinModal">
+                    Создать профиль
                   </button>
                 </div>
               </div>
@@ -468,55 +676,14 @@
                 Своё сообщество
               </h3>
               <p class="small text-body-secondary mb-0">
-                Выберите игру и подготовьте заявку на участие.
+                Создайте профиль и соберите подборку избранных игр.
               </p>
             </div>
           </div>
         </div>
       </section>
     </main>
-    <footer class="site-footer py-4 mt-5">
-      <div class="container">
-        <div class="row g-4 align-items-start">
-          <div class="col-12 col-lg-4">
-            <a class="footer-logo d-inline-flex align-items-center gap-3" href="index.html">
-              <img class="footer-preview" src="images/preview.jpg" width="64" height="64" alt="" loading="lazy">
-              <span class="footer-name">GAME COMMUNITY</span>
-            </a>
-            <p class="footer-slogan small text-body-secondary mt-3 mb-0">Миры, истории и люди, которые любят играть.</p>
-          </div>
-          <div class="col-12 col-md-6 col-lg-4 text-lg-center">
-            <nav class="footer-nav d-flex flex-wrap gap-2 justify-content-lg-center" aria-label="Навигация в подвале">
-              <a class="btn btn-outline-secondary btn-sm" href="index.html">Сообщества</a>
-              <a class="btn btn-outline-secondary btn-sm" href="catalog.html">Игры</a>
-              <a class="btn btn-outline-secondary btn-sm" href="about.html">О сайте</a>
-              <div class="dropup">
-                <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="footerGameCenters" data-bs-toggle="dropdown" aria-expanded="false">Игровые центры</button>
-                <ul class="dropdown-menu" aria-labelledby="footerGameCenters">
-                  <li><a class="dropdown-item" href="games/cs2.html">Counter-Strike 2</a></li>
-                  <li><a class="dropdown-item" href="games/stardew-valley.html">Stardew Valley</a></li>
-                  <li><a class="dropdown-item" href="games/oneshot.html">OneShot</a></li>
-                  <li><a class="dropdown-item" href="games/barotrauma.html">Barotrauma</a></li>
-                  <li><a class="dropdown-item" href="games/nine-sols.html">Nine Sols</a></li>
-                  <li><a class="dropdown-item" href="games/celeste.html">Celeste</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="product.html">В центре внимания: CS2</a></li>
-                </ul>
-              </div>
-            </nav>
-          </div>
-          <div class="col-12 col-md-6 col-lg-4 footer-contact-column">
-            <address class="footer-contacts d-flex flex-column align-items-start gap-3 mb-0">
-              <a class="footer-contact" href="mailto:game-community@mail.ru"><svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg><span>game-community@mail.ru</span></a>
-              <a class="footer-contact" href="https://t.me/gamecommunity" target="_blank" rel="noopener noreferrer"><svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="m21 3-4 18-6-6-4 3 1-7L21 3ZM8 11l9-5-6 9M3 9l18-6-13 8-5-2Z"/></svg><span>Наш Telegram-канал</span></a>
-              <a class="footer-contact" href="https://vk.com/gamecommunity" target="_blank" rel="noopener noreferrer"><svg class="contact-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="6" fill="currentColor"/><path d="m5 8 3 8h2l2-8M14 8v8m5-8-5 4 5 4" stroke="#171326" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Наше сообщество ВК</span></a>
-            </address>
-            <div class="mt-4"><a class="btn btn-primary footer-join" href="order.html">Присоединиться</a></div>
-          </div>
-        </div>
-        <p class="footer-copyright small text-body-secondary text-center">&copy; 2026 Все права защищены.</p>
-      </div>
-    </footer>
+    <footer class="site-footer py-4 mt-5" data-site-footer></footer>
     <div class="page-actions" aria-label="Быстрые действия">
       <a class="back-to-top" href="#page-top" aria-label="Вернуться к началу страницы">Наверх</a>
     </div>
@@ -525,7 +692,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h2 class="modal-title h5" id="joinModalTitle">
-              Присоединиться к сообществу
+              Создать профиль
             </h2>
             <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Закрыть">
             </button>
@@ -555,23 +722,6 @@
                   Укажите корректный e-mail.
                 </div>
               </div>
-              <div class="mb-3">
-                <label class="form-label" for="quick-game">
-                  Игровое сообщество *
-                </label>
-                <select class="form-select" id="quick-game" name="game" required>
-                  <option value="">Выберите игру</option>
-                  <option value="cs2">Counter-Strike 2</option>
-                  <option value="stardew-valley">Stardew Valley</option>
-                  <option value="oneshot">OneShot</option>
-                  <option value="barotrauma">Barotrauma</option>
-                  <option value="nine-sols">Nine Sols</option>
-                  <option value="celeste">Celeste</option>
-                </select>
-                <div class="invalid-feedback">
-                  Выберите игру.
-                </div>
-              </div>
               <div class="form-check">
                 <input class="form-check-input" id="quick-agree" type="checkbox" name="agree" required>
                 <label class="form-check-label small" for="quick-agree">
@@ -588,7 +738,7 @@
               Закрыть
             </button>
             <button class="btn btn-primary" type="submit" form="quick-join-form">
-              Подготовить заявку
+              Сохранить профиль
             </button>
           </div>
         </div>
@@ -598,5 +748,6 @@
     </script>
     <script src="js/main.js">
     </script>
+    <script src="js/favorites.js"></script>
   </body>
 </html>

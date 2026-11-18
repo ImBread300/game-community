@@ -6,7 +6,8 @@
     "icon": "cs2-icon.jpg",
     "credit": "Valve",
     "background": "cs2-header.jpg",
-    "illustration": "cs2-illustration.jpg"
+    "illustration": "cs2-illustration.jpg",
+    "guide_avatar": "guides/cs2.jpg"
   },
   {
     "game": "stardew-valley",
@@ -15,7 +16,8 @@
     "icon": "stardew-valley-icon.jpg",
     "credit": "ConcernedApe",
     "background": "stardew-valley-header.jpg",
-    "illustration": "stardew-valley-illustration.jpg"
+    "illustration": "stardew-valley-illustration.jpg",
+    "guide_avatar": "guides/stardew-valley.jpg"
   },
   {
     "game": "oneshot",
@@ -31,7 +33,8 @@
       "neutral": "niko/niko.png",
       "surprised": "niko/niko_pancakes.png",
       "filling": "niko/niko5.png"
-    }
+    },
+    "guide_avatar": "guides/oneshot.jpg"
   },
   {
     "game": "barotrauma",
@@ -40,7 +43,8 @@
     "icon": "barotrauma-icon.jpg",
     "credit": "FakeFish, Undertow Games",
     "background": "barotrauma-header.jpg",
-    "illustration": "barotrauma-illustration.jpg"
+    "illustration": "barotrauma-illustration.jpg",
+    "guide_avatar": "guides/barotrauma.jpg"
   },
   {
     "game": "nine-sols",
@@ -49,7 +53,8 @@
     "icon": "nine-sols-icon.jpg",
     "credit": "RedCandleGames",
     "background": "nine-sols-header.jpg",
-    "illustration": "nine-sols-illustration.jpg"
+    "illustration": "nine-sols-illustration.jpg",
+    "guide_avatar": "guides/nine-sols.jpg"
   },
   {
     "game": "celeste",
@@ -58,6 +63,7 @@
     "icon": "celeste-icon.jpg",
     "credit": "Maddy Makes Games Inc., Extremely OK Games, Ltd.",
     "background": "celeste-header.jpg",
-    "illustration": "celeste-illustration.jpg"
+    "illustration": "celeste-illustration.jpg",
+    "guide_avatar": "guides/celeste.jpg"
   }
 ]
